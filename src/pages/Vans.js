@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 
 export default function vans() {
@@ -8,3 +9,12 @@ export default function vans() {
     </div>
   )
 }
+=======
+import React from 'react'
+
+export default function vans() {
+  return (
+    <div>vans</div>
+  )
+}
+>>>>>>> origin/main
