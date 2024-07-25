@@ -11,9 +11,14 @@
     "react-router-dom": "^6.25.1",
 <<<<<<< HEAD
     "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+=======
+<<<<<<< HEAD
+    "react-scripts": "5.0.1",
 =======
     "react-scripts": "^5.0.1",
 >>>>>>> Audrey
+>>>>>>> 71e49d1a6536113c921ccf2dfe14494b6550eb64
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,3 +1,77 @@
 body{
   font-family: "Inter";
 }
+
+.home-container {
+  background-image: url(./Images/image\ 54.png);
+  height: 54vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.main-section {
+  max-width: 660px;
+  margin: auto;
+  background-color: white;
+}
+
+.link-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF8C38;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  padding: 10px 0px;
+}
+
+.section-divide3 {
+  padding: 0px 9px;
+}
+
+.text-spacing {
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-page-content {
+  padding: 20px;
+}
+
+.about-page-cta {
+  background-color: #FFCC8D;
+  height: 20vh;
+}
+
+.link-button {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  position: relative;
+  top: 37px;
+}
+
+.footer {
+  background-color:#252525;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+}

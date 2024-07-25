@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -7,11 +8,14 @@ import Vans from "../src/pages/Vans";
 
 function App() {
   return (
+
+    <div className='main-section'>
     <BrowserRouter>
-      <header>
+      <header className='Header-main'>
         <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
           <Link to="/About">About</Link>
+          <Link to="/Vans">Vans</Link>
         </nav>
       </header>
       <Routes>
@@ -20,6 +24,7 @@ function App() {
         <Route path="/Vans" element={<Vans />} />
       </Routes>
     </BrowserRouter>
+    </div>
   )
 };
 
