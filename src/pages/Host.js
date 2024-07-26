@@ -2,9 +2,8 @@ import React from 'react'
 
 function Host() {
   return (
-    <div>
-    <div>Host</div>
-    <h1>sign up</h1>
+    <div className="host">
+      <h1>the host</h1>
     </div>
   )
 }
