@@ -1,8 +1,6 @@
 body{
   font-family: "Inter";
 }
-
-<<<<<<< HEAD
 .cards--width{
   width: 720px;
   display: flex;
@@ -72,15 +70,6 @@ body{
 .cardvans--container{
   padding-bottom: 28px;
 }
-
-
-
-
-
-
-
-
-=======
 .home-container {
   background-image: url(./Images/image\ 54.png);
   height: 54vh;
@@ -154,4 +143,3 @@ body{
   display: flex;
   justify-content: center;
 }
->>>>>>> 787da4f2ab723b7a1f244c921c0dfaba3b438c77
