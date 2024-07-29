@@ -2,85 +2,6 @@ body{
   font-family: "Inter";
 }
 
-<<<<<<< HEAD
-.cards--width{
-  width: 720px;
-  display: flex;
-  justify-content: center;
-  
-}
-.cards{
-  width: 640px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-
-.images{
-  /* margin: 15px; */
-  width: 300px;
-  height: 300px;
-  border-radius: 7px;
-}
-
-
-
-
-.allcars .type-price{
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.allcars .type-price p{
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.button a{
-  text-decoration: none;
- font-size: 18px;
- color:white;
-
-}
-
-
-
-.allcars .button-perday{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 9px;
-}
-
-.allcars .button-perday .button{
-  width: 92px;
-    height: 40px;
-    display:flex;
-  align-items: center;
-  justify-content: center;
-   border-radius: 5px;
-}
-
-
-.allcars .button .perday p{
- font-size: 12px;
- 
-   
-}
-
-.cardvans--container{
-  padding-bottom: 28px;
-}
-
-
-
-
-
-
-
-
-=======
 .home-container {
   background-image: url(./Images/image\ 54.png);
   height: 54vh;
@@ -154,4 +75,3 @@ body{
   display: flex;
   justify-content: center;
 }
->>>>>>> 787da4f2ab723b7a1f244c921c0dfaba3b438c77
