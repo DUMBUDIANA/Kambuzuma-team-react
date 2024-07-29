@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const CardsStructure = (props) => {
   return (
@@ -17,11 +18,12 @@ const CardsStructure = (props) => {
       
       <div className="button-perday">
         <div style={{ backgroundColor : props.color }} className="button">
-        <a href="">{props.button}</a>
+        <Link to="">{props.button}</Link>
         </div>
         
 
         <div className="perday">
+
           <p>{props.day}</p>
         </div>
       </div>

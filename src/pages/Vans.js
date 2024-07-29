@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from '../components/Database/Database'
 import CardsStructure from '../components/CardsStructure'
+import Card from '../components/Database/Database'
 export default function Vans() {
   const Aboutvans = Card.map(item => {
    
