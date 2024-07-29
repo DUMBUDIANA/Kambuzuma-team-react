@@ -2,7 +2,12 @@ body{
   font-family: "Inter";
 }
 
-
+.cards--width{
+  width: 720px;
+  display: flex;
+  justify-content: center;
+  
+}
 .cards{
   width: 640px;
   display: flex;

@@ -21,8 +21,10 @@ export default function Vans() {
   })
 
   return (
+<div className="cards--width">
     <div className='cards'>
     {Aboutvans}
+    </div>
     </div>
   )
 }
