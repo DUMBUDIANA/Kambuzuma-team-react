@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom"
 import React from 'react'
-
+np
 function Host() {
   return (
-<<<<<<< HEAD
     <div className="host">
       <h1 className="host-one">Sign in to your account</h1>
 
@@ -19,11 +18,6 @@ function Host() {
         </div>
  
  
-=======
-    <div>
-    <div>Host</div>
-    <h1>sign up</h1>
->>>>>>> bcbbd5f (host sign up)
     </div>
   )
 }
