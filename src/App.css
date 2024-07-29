@@ -1,3 +1,157 @@
 body{
   font-family: "Inter";
 }
+
+<<<<<<< HEAD
+.cards--width{
+  width: 720px;
+  display: flex;
+  justify-content: center;
+  
+}
+.cards{
+  width: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.images{
+  /* margin: 15px; */
+  width: 300px;
+  height: 300px;
+  border-radius: 7px;
+}
+
+
+
+
+.allcars .type-price{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.allcars .type-price p{
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.button a{
+  text-decoration: none;
+ font-size: 18px;
+ color:white;
+
+}
+
+
+
+.allcars .button-perday{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 9px;
+}
+
+.allcars .button-perday .button{
+  width: 92px;
+    height: 40px;
+    display:flex;
+  align-items: center;
+  justify-content: center;
+   border-radius: 5px;
+}
+
+
+.allcars .button .perday p{
+ font-size: 12px;
+ 
+   
+}
+
+.cardvans--container{
+  padding-bottom: 28px;
+}
+
+
+
+
+
+
+
+
+=======
+.home-container {
+  background-image: url(./Images/image\ 54.png);
+  height: 54vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.main-section {
+  max-width: 660px;
+  margin: auto;
+  background-color: white;
+}
+
+.link-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF8C38;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  padding: 10px 0px;
+}
+
+.section-divide3 {
+  padding: 0px 9px;
+}
+
+.text-spacing {
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-page-content {
+  padding: 20px;
+}
+
+.about-page-cta {
+  background-color: #FFCC8D;
+  height: 20vh;
+}
+
+.link-button {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  position: relative;
+  top: 37px;
+}
+
+.footer {
+  background-color:#252525;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> 787da4f2ab723b7a1f244c921c0dfaba3b438c77
