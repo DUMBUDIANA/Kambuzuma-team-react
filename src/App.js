@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
 import Vans from "../src/pages/Vans";
+import  './App.css'
 
 function App() {
   return (
