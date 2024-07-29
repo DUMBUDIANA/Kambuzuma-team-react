@@ -5,12 +5,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
 import Vans from "../src/pages/Vans";
-
+import "./App.css"
 function App() {
-  return (
-
+  return (  
     <div className='main-section'>
-    <BrowserRouter>
+       <BrowserRouter>
       <header className='Header-main'>
         <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
@@ -20,9 +19,10 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Banner />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
       </Routes>
+
     </BrowserRouter>
     </div>
   )
@@ -32,5 +32,4 @@ function App() {
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(<App />);
-
   export default App;

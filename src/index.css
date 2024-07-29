@@ -10,3 +10,9 @@
   font-family: "Inter";
   src: url("https://fonts.google.com/specimen/Inter");
 }
+
+body{
+display: flex;
+justify-content: center;
+
+}
