@@ -24,9 +24,22 @@ export default function Vans() {
 
   return (
 <div className="cards--width">
+    <div className="top-buttons">
+    <h1>Explore our van options</h1>
+    <button>Simple</button>
+    <button>Luxury</button>
+    <button>Rugged</button>
+    <a href='#'>Clear filters</a>
+
+    </div>
+   
+
     <div className='cards'>
     {Aboutvans}
     </div>
+    <div className="footer">
+        <p>Ⓒ 2022 #VANLIFE</p>
+        </div> 
     </div>
   )
 }

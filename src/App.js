@@ -5,13 +5,14 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
 import Vans from "../src/pages/Vans";
+import logo from "../src/Images/logog.png"
 import "./App.css"
 function App() {
   return (  
     <div className='main-section'>
        <BrowserRouter>
       <header className='Header-main'>
-        <Link className="site-logo" to="/">#VanLife</Link>
+        <Link className="site-logo" to="/"><img src={logo} alt= "logo"className="logo" /></Link>
         <nav>
           <Link to="/About">About</Link>
           <Link to="/Vans">Vans</Link>

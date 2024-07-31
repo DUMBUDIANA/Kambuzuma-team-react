@@ -1,24 +1,58 @@
 body{
   font-family: "Inter";
 }
+
+
 .cards--width{
-  width: 720px;
+  width: 660px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 247, 237, 1);
   
 }
+
 .cards{
   width: 640px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.top-buttons{
+  align-self: start;
+  margin: 40px 0px 20px 42px;
+}
+
+.top-buttons h1{
+  font-size: 32px;
+  font-weight: 700;
+  margin: 12px;
+}
+
+.top-buttons button{
+  margin: 10px 12px;
+  width: 104px;
+  height: 37px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 234, 208, 1);
+}
+
+.top-buttons a{
+  text-decoration: underline;
+  color: rgba(77, 77, 77, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0px 10px 30px;
 }
 
 
 .images{
   /* margin: 15px; */
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 7px;
 }
 
@@ -82,14 +116,29 @@ body{
 .Header-main {
   display: flex;
   justify-content: space-between;
-  height: 10vh;
+  height: 112px;
   align-items: center;
-  margin: 0px 20px;
+  width: 660.15px; 
+  background-color: rgba(255, 247, 237, 1);
+  padding: 0px 20px;
+}
+
+.Header-main a{
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 5px;
+}
+
+.Header-main .logo{
+  width: 145px;
+  height: 25px;
+  object-fit: contain;
 }
 
 .main-section {
   max-width: 660px;
-  margin: auto;
+  margin: 40px auto;
   background-color: white;
 }
 
@@ -142,4 +191,5 @@ body{
   padding: 25px 20px;
   display: flex;
   justify-content: center;
+  width: 660px;
 }
