@@ -23,13 +23,14 @@ export default function Vans() {
   })
 
   return (
+    <div id="Vans">
 <div className="cards--width">
     <div className="top-buttons">
     <h1>Explore our van options</h1>
     <button>Simple</button>
     <button>Luxury</button>
     <button>Rugged</button>
-    <a href='#'>Clear filters</a>
+    <a href='/'>Clear filters</a>
 
     </div>
    
@@ -40,6 +41,7 @@ export default function Vans() {
     <div className="footer">
         <p>Ⓒ 2022 #VANLIFE</p>
         </div> 
+    </div>
     </div>
   )
 }

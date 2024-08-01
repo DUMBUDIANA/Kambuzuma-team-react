@@ -5,8 +5,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
 import Vans from "../src/pages/Vans";
-import logo from "../src/Images/logog.png"
+import Host from './pages/Host';
+import Host2 from './pages/Host2';
+import logo from "../src/Images/logog.png";
 import "./App.css"
+
 function App() {
   return (  
     <div className='main-section'>
@@ -16,13 +19,18 @@ function App() {
         <nav>
           <Link to="/About">About</Link>
           <Link to="/Vans">Vans</Link>
+          <Link to="/Host">Host</Link>
+          {/* <Link to="/Host2">Host</Link> */}
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
+        <Route path="/Host" element={<Host />} />
+        <Route path="/Host2" element={<Host2 />} />
       </Routes>
+     
 
     </BrowserRouter>
     </div>
