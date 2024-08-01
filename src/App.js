@@ -22,6 +22,8 @@ function App() {
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
+        <Route path="/Host" element={<Host />} />
+        <Route path="/Hoss" element={<Hoss />} />
       </Routes>
     </BrowserRouter>
   
