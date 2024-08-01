@@ -1,6 +1,8 @@
+
 body{
   font-family: "Inter";
 }
+
 
 
 .cards--width{
@@ -163,6 +165,10 @@ body{
   margin-bottom: 20px;
 }
 
+.about-page-container{
+  background-color: rgba(255, 247, 237, 1);
+}
+
 .about-image {
   width: 100%;
 }
@@ -171,9 +177,16 @@ body{
   padding: 20px;
 }
 
+.about-page-content h1{
+  margin: 14px 0px;
+}
+
 .about-page-cta {
   background-color: #FFCC8D;
-  height: 20vh;
+  height: 27vh;
+  margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .link-button {
@@ -193,3 +206,82 @@ body{
   justify-content: center;
   width: 660px;
 }
+
+/* host styling  */
+.foot {
+  margin-top: 20px;
+  background-color:#252525;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.link-Host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  padding: 10px 0px;
+  border-radius: 4px;
+}
+
+.host--h1{
+    font-size: 30px;
+    width: 60%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.hostTwo--h1 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+}
+
+input{
+  width: 100%;
+  padding: 8px 20px;
+}
+
+.link-HostTwo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF8C38;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  padding: 10px 0px;
+  border-radius: 2px;
+}
+
+.HostTwo--p{
+  font-size: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.HostTwo--span {
+  color: #FFCC8D;
+}
+
+.foot {
+  margin-top: 70px;
+  background-color:#252525;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+

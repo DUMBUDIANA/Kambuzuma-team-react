@@ -29,7 +29,7 @@ export default function Vans() {
     <button>Simple</button>
     <button>Luxury</button>
     <button>Rugged</button>
-    <a href='#'>Clear filters</a>
+    <a href='/'>Clear filters</a>
 
     </div>
    
