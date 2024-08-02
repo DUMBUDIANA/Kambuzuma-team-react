@@ -10,6 +10,9 @@ const Card = [
         button:"Simple",
         day:"/day",
         color:'#E17654'
+
+
+        
        
     },
 
