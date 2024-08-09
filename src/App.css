@@ -20,6 +20,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  color: #000;
 }
 
 .top-buttons{
@@ -40,16 +41,66 @@ body{
   outline: none;
   border: none;
   background-color: rgba(255, 234, 208, 1);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.top-buttons a{
+.top-buttons button.link-filter{
+  background: none;
+  border: none;
+  color:rgba(77, 77, 77, 1);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* .top-buttons a{
   text-decoration: underline;
   color: rgba(77, 77, 77, 1);
   font-size: 16px;
   font-weight: 500;
   margin: 10px 0px 10px 30px;
+} */
+
+.top-buttons button.simple:hover{
+  background-color: rgba(225, 118, 84, 1);
+  color: white;
+  
 }
 
+.top-buttons button.simple.active{
+  background-color: rgba(225, 118, 84, 1);
+  color: white;
+  
+}
+
+.top-buttons button.rugged:hover{
+  background-color: rgba(17, 94, 89, 1);
+  color: white;
+}
+
+.top-buttons button.rugged.active{
+  background-color: rgba(17, 94, 89, 1);
+  color: white;
+}
+
+.top-buttons button.luxury:hover{
+  background-color: rgba(22, 22, 22, 1);
+  color: white;
+}
+
+.top-buttons button.luxury.active{
+  background-color: rgba(22, 22, 22, 1);
+  color: white;
+}
+
+
+
+
+
+/* Card structure */
 
 .images{
   /* margin: 15px; */
@@ -106,6 +157,8 @@ body{
 .cardvans--container{
   padding-bottom: 28px;
 }
+
+/* Banner.js */
 .home-container {
   background-image: url(./Images/image\ 54.png);
   height: 54vh;
@@ -114,6 +167,25 @@ body{
   justify-content: center;
   align-items: center;
 }
+
+.link-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF8C38;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  padding: 10px 0px;
+}
+
+.section-divide3 {
+  padding: 0px 9px;
+}
+
+/*  */
 
 .Header-main {
   display: flex;
@@ -144,26 +216,28 @@ body{
   background-color: white;
 }
 
-.link-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #FF8C38;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  margin-top: 35px;
-  padding: 10px 0px;
-}
-
-.section-divide3 {
-  padding: 0px 9px;
-}
 
 .text-spacing {
   margin-bottom: 20px;
 }
+
+nav  > a:hover{
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+nav  > a.active{
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About.js */
 
 .about-page-container{
   background-color: rgba(255, 247, 237, 1);
@@ -198,6 +272,8 @@ body{
   top: 37px;
 }
 
+
+/* Footer */
 .footer {
   background-color:#252525;
   color: white;
@@ -215,6 +291,11 @@ body{
   padding: 25px 20px;
   display: flex;
   justify-content: center;
+}
+
+form input{
+  margin:10px;
+  border-radius: 5px;
 }
 
 
@@ -263,6 +344,10 @@ input{
   margin-top: 35px;
   padding: 10px 0px;
   border-radius: 2px;
+  outline: none;
+  border: none;
+  width: 100%;
+ cursor: pointer;
 }
 
 .HostTwo--p{
