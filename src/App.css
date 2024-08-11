@@ -65,8 +65,8 @@ body{
 } */
 
 
-.full{
-  font-size: large;
+.nice{
+  height: 0px;
 }
 
 .top-buttons button.simple:hover{
