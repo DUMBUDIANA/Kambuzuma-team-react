@@ -20,6 +20,7 @@ export default function LogIn() {
             const user = userCredential.user;
             navigate("/home")
             console.log(user);
+            alert('SignIp Succesfully')
         })
         .catch((error) => {
             const errorCode = error.code;
