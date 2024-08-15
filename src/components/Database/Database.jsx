@@ -1,9 +1,3 @@
-
-
-
-
-
-
 const Card = [
 
     {   id:1,

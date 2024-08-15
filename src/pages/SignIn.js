@@ -18,7 +18,7 @@ export default function LogIn() {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/home")
+            navigate("Dashboard")
             console.log(user);
             alert('SignIp Succesfully')
         })
