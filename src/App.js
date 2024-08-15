@@ -10,6 +10,11 @@ import logIn from "../src/Images/User circle.png";
 import CreateAcc from "./pages/SignUp";
 import LogIn from './pages/SignIn';
 import Hoss from './pages/Hoss';
+import HostLayout from './components/HostLayout';
+import Dashboard from './components/HostPage/Dashboard';
+import Income from './components/HostPage/Income';
+import Reviews from './components/HostPage/Reviews';
+// import Layout from './components/Layout.jsx'
 import "./App.css";
 
 function App() {
@@ -26,12 +31,20 @@ function App() {
         </nav>
       </header>
       <Routes>
+        {/* <Route path="/" element = {<Layout />}> */}
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
         <Route path="/SignIn" element={<LogIn />} />
         <Route path="/SignUp" element={<CreateAcc />} />
         <Route path="/Hoss" element={<Hoss />} />
+
+        <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          {/* </Route> */}
       </Routes>
 
     </BrowserRouter>
