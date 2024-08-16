@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Card from '../Database/Database'
 import Host from '../HostPage/Host'
-import staring from 'C:/Users/UncommonStudent/Documents/Kambuzuma-team-react-main/src/Images/Star 3.png'
+import staring from '../Star 3.png'
 export default function Dashboard() {
 
 
@@ -79,9 +79,7 @@ export default function Dashboard() {
 
 
         
-       
-      
-
+                
       <div className="footer">
         <p>Ⓒ 2022 #VANLIFE</p>
       </div>
