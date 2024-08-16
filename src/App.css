@@ -374,7 +374,10 @@ input{
 
 .header-dashboard {
   margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
+
 .btn-4 {
   border: none;
   display: flex;
@@ -406,6 +409,72 @@ input{
 .text-inside {
   font-weight: 700;
   text-decoration: underline;
+}
+
+
+/* host income  */
+
+.mian {
+  padding: 0 20px;
+  background-color: #FFF7ED;
+  width: 100%;
+
+}
+
+.more-img {
+  margin-top: 30px;
+}
+
+
+.ini-h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.p-more {
+  font-size: 20px;
+  font-weight: 100;
+  margin-top: -15px;
+}
+
+.un-span {
+  text-decoration: underline;
+  font-weight: 200;
+}
+
+.graph-img {
+  margin: 36px 0;
+  width: 100%;
+}
+
+.transctions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pricelist {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+} 
+
+.price-more {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  margin-bottom:20px;
+  border-radius: 5px;
+} 
+
+
+.trans-h4 {
+  font-size: 27px;
+  margin-bottom: 30px;
+
 }
 
 
@@ -563,3 +632,4 @@ object-fit: cover;
 
 
 /* ******************EndHostmap************* */
+
