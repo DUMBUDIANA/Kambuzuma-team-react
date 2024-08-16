@@ -26,7 +26,7 @@ const CardsStructure = (props) => {
             </div>
             <div className="button-perday">
               <div style={{ backgroundColor: color }} className="button">
-                <Link to="" >{button}</Link>
+                <Link to="../pages/VansDetails" >{button}</Link>
               </div>
               <div className="perday">
                 <p>{day}</p>

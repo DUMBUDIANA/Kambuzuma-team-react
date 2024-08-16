@@ -10,7 +10,8 @@ import logIn from "../src/Images/User circle.png";
 import CreateAcc from "./pages/SignUp";
 import LogIn from './pages/SignIn';
 import Hoss from './pages/Hoss';
-import HostLayout from './components/HostLayout';
+import VansDetails from './pages/VansDetails';
+import HostVans from './components/HostPage/Vans';
 import Dashboard from './components/HostPage/Dashboard';
 import Income from './components/HostPage/Income';
 import Reviews from './components/HostPage/Reviews';
@@ -25,6 +26,7 @@ function App() {
       <header className='Header-main'>
         <Link className="site-logo" to="/"><img src={logo} alt= "logo"className="logo" /></Link>
         <nav>
+        <Link to="/Dashboard" className='links'>Host</Link>
           <Link to="/About" className='links'>About</Link>
           <Link to="/Vans" className='links'>Vans</Link>
            <Link to="/SignIn" className='links'><img src={logIn} alt="login"  className='sign-icon'/></Link>
@@ -35,15 +37,14 @@ function App() {
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
+        <Route path="/VansDetails" element={<VansDetails />} />
+        <Route path="/Dashboard" element={<Dashboard/>} />
+        <Route path="/Income" element={<Income />} />
+        <Route path="/Reviews" element={<Reviews />} />
+        <Route path="/Hostvans" element={<HostVans />} />
         <Route path="/SignIn" element={<LogIn />} />
         <Route path="/SignUp" element={<CreateAcc />} />
         <Route path="/Hoss" element={<Hoss />} />
-
-        <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="reviews" element={<Reviews />} />
-          </Route>
           {/* </Route> */}
       </Routes>
 
