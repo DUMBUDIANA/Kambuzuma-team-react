@@ -407,3 +407,44 @@ input{
   font-weight: 700;
   text-decoration: underline;
 }
+
+
+.rev{
+  margin: auto;
+  margin-top: 30px;
+}
+
+.evry{
+  width: 100%;
+}
+.scorey{
+  margin-top: 25px;
+}
+
+.stars-div{
+  margin-top: 12px;
+}
+.the-stars{
+  margin-bottom: 9px;
+}
+.grey{
+  margin-bottom: 10px;
+  color: gray;
+}
+.first-word{
+  font-weight: bolder;
+  color: #000;
+}
+hr{
+  margin-top: 20px;
+}
+.the-stars2{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.the-div{
+  margin-bottom: 25px;
+}
+.header-dashboard{
+  margin-top: 20px;
+}
