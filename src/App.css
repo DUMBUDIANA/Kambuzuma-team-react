@@ -407,3 +407,159 @@ input{
   font-weight: 700;
   text-decoration: underline;
 }
+
+
+
+
+/* ******************Hostmap**************** */
+
+
+.host--container{
+  width: 100%;
+}
+
+
+.welcome--container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 20px 20px 20px;
+  background-color: #FFEAD0;
+}
+
+
+.welcome--container .income--last{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.income--last .bold--underline{
+font-weight: 600;
+text-decoration: underline;
+
+}
+
+.welcome--container .point--two p{
+font-size: 45px;
+font-weight: 900;
+}
+
+
+.review--score{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 16vh;
+  background-color: #FFDDB2;
+}
+
+.review--score .stars{
+display: flex;
+justify-content: space-between;
+width: 33%;
+align-items: center;
+}
+
+.stars .review--bold{
+  
+  font-size: 21px;
+  font-weight: 900;
+
+
+}
+
+.img--score{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+  .img--score p{
+    font-size: 21px;
+  }
+  
+
+ .img--score .bold{
+  padding-left: 4px;
+  font-size: 21px;
+  font-weight: 900;
+ }
+
+.review--score .img--score{
+
+ display: flex;
+
+}
+
+.img--score img{
+  height: 18px;
+  object-fit: cover;
+}
+
+
+.your--listed--vans{
+  padding: 0px 20px 20px 20px;
+  background-color: #FFF7ED;
+ 
+}
+
+.your--listed--vans .listedvans--bold{
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.your--listed--vans .view--more{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.your--listed--vans .view--more .view--all--vans{
+
+  cursor:pointer;
+
+}
+
+
+.edit--vans  .img--type--day img{
+object-fit: cover;
+  height: 65px;
+  border-radius: 5px;
+}
+
+.edit--vans  .img--type--day{
+  display: flex;
+  align-items: center;
+}
+
+ .type--day .price--day{
+  display: flex;
+}
+
+.all--container .edit--vans{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px 15px 20px;
+  background-color: #FFFFFF;
+  margin-bottom: 12px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.img--type--day .type--day{
+  padding-left: 12px;
+}
+
+.type--day .type--bold{
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+/* ******************EndHostmap************* */
