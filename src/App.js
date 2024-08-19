@@ -15,6 +15,7 @@ import HostVans from '../src/HostPage/Vans';
 import Dashboard from '../src/HostPage/Dashboard';
 import Income from '../src/HostPage/Income';
 import Reviews from '../src/HostPage/Reviews';
+import ProtectedRoute from './components/ProtectedRoute';
 // import Layout from './components/Layout.jsx'
 import "./App.css";
 
@@ -38,10 +39,28 @@ function App() {
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
         <Route path="/VansDetails" element={<VansDetails />} />
-        <Route path="/Dashboard" element={<Dashboard/>} />
-        <Route path="/Income" element={<Income />} />
-        <Route path="/Reviews" element={<Reviews />} />
-        <Route path="/Hostvans" element={<HostVans />} />
+        <Route path="/Dashboard" element={
+          <ProtectedRoute>
+          <Dashboard/>
+          </ProtectedRoute>
+          } />
+
+        <Route path="/Income" element={
+          <ProtectedRoute>
+              <Income />
+          </ProtectedRoute>
+          } />
+
+        <Route path="/Reviews" element={
+           <ProtectedRoute>
+          <Reviews />
+          </ProtectedRoute>
+          } />
+        <Route path="/Hostvans" element={
+          <ProtectedRoute>
+          <HostVans />
+          </ProtectedRoute>
+          } />
         <Route path="/SignIn" element={<LogIn />} />
         <Route path="/SignUp" element={<CreateAcc />} />
         <Route path="/Hoss" element={<Hoss />} />

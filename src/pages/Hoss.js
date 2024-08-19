@@ -11,9 +11,10 @@ export default function Host2() {
         signOut(auth).then(() => {
         // Sign-out successful.
             navigate("/");
-            console.log("Signed out successfully")
+            alert("Signed out successfully")
         }).catch((error) => {
         // An error happened.
+        alert("Failed to connect network error")
         });
     }
     return (
