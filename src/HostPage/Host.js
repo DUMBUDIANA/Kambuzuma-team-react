@@ -8,7 +8,7 @@ const Host = (props) => {
               <div className="edit--vans">
   
                 <div className="img--type--day">
-                  <img src={ require( '../Database/images/' + props.image)} alt="" />
+                  <img src={ require( '../images 2/' + props.image)} alt="" />
   
                    <div className="type--day">
                      <p className="type--bold">{props.type}</p>

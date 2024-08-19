@@ -11,10 +11,10 @@ import CreateAcc from "./pages/SignUp";
 import LogIn from './pages/SignIn';
 import Hoss from './pages/Hoss';
 import VansDetails from './pages/VansDetails';
-import HostVans from './components/HostPage/Vans';
-import Dashboard from './components/HostPage/Dashboard';
-import Income from './components/HostPage/Income';
-import Reviews from './components/HostPage/Reviews';
+import HostVans from '../src/HostPage/Vans';
+import Dashboard from '../src/HostPage/Dashboard';
+import Income from '../src/HostPage/Income';
+import Reviews from '../src/HostPage/Reviews';
 // import Layout from './components/Layout.jsx'
 import "./App.css";
 
