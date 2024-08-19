@@ -630,6 +630,30 @@ object-fit: cover;
   font-weight: 900;
 }
 
-
+.rev{
+  margin: auto;
+}
+.header-dashboard{
+  margin-top: 40px;
+}
+.scorey{
+  font-weight: bolder;
+  margin-top: 40px;
+}
+.the-stars{
+  margin-top: -20px;
+  margin-left: -20px;
+}
+.grey{
+  color: grey;
+}
+.first-word{
+  font-weight: bolder;
+  color: black;
+}
+.the-stars2{
+  margin-top: -20px;
+  margin-left: -20px;
+}
 /* ******************EndHostmap************* */
 
