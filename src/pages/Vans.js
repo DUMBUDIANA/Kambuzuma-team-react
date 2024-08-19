@@ -50,7 +50,7 @@ export default function Vans() {
        
       </div>
 
-      <Link to ={`/vans/${Vans.id}`}><div className="cards">
+      <Link key={Vans.id}    to ={`/vans/${Vans.id}`}><div className="cards">
         {filteredCards.map(item => (
           <CardsData
             key={item.id}
