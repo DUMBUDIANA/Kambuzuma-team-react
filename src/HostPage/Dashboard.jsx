@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Card from '../components/Database/Database';
 import Host from './Host';
-import staring from "C:/Users/Dell/Pictures/Kambuzuma-team-react-main/src/Images/star.png";
+import staring from "../Images/star.png";
 export default function Dashboard() {
 
 

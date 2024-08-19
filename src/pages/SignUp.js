@@ -26,6 +26,7 @@ import  {useState} from 'react'
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
+                alert("Failed to connect network error")
                 // ..
             });
      
