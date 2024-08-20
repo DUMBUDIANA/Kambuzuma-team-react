@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import firebase from "firebase/compat/app";
+import 'firebase/compat/auth'
 
 
 const firebaseConfig = {
@@ -11,8 +11,8 @@ const firebaseConfig = {
     appId: "1:584012781544:web:c87d4860fdc243bff7765d"
   };
 
-  const app = initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);
-export default app;
+const projectAuth = firebase.auth();
+export { projectAuth };
