@@ -1,11 +1,22 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from '../components/Database/Database';
 import Host from './Host';
 import staring from "../Images/star.png";
-export default function Dashboard() {
+import userLogOut from "../auth/userLogOut";
 
 
+const Dashboard = () => {
+  const navigate = useNavigate()
+  const {error, logOut} = userLogOut()
+
+  const handleLogOut = async () =>{
+    await logOut();
+
+    if(!error) {
+        navigate("/")
+    }
+  }
   const Maphost = (Card.map(item => {
     return(
     <Host 
@@ -16,21 +27,16 @@ export default function Dashboard() {
     day={item.day}
 
     />
-
+      
     )
   }))
-
-
-
-
-
 
 
 
   return (
     <div className="cards--width links-btn">
         <div className="btn-4">
-            <div><a href='/Dashboard'>  Dashboard </a></div>
+            <div><a href='/'>  Dashboard </a></div>
             <Link to="/Income" className='links'>Income</Link>
             <Link to="/HostVans" className='links'>Vans</Link>
             <Link to="/Reviews" className='links'>Reviews</Link>
@@ -69,7 +75,7 @@ export default function Dashboard() {
         <p className='listedvans--bold'>Your listed Vans</p>
         <p className='view--all--vans'>View all</p>
         </div>
-
+        <button onClick={handleLogOut}>Log Out</button>
   {Maphost}
     </div>
     
@@ -84,5 +90,7 @@ export default function Dashboard() {
         <p>Ⓒ 2022 #VANLIFE</p>
       </div>
     </div>
-  );
+  )
 }
+
+export default Dashboard
