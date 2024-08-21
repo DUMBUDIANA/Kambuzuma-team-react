@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import CardsData from '../components/CardsStructure.js';
 import Card from '../components/Database/Database.jsx';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+// import VansDetails from './VansDetails.js';
 
 export default function Vans() {
   const [currentFilter, setCurrentFilter] = useState('all');
-  
+  // const [selectedVan, setSelectedVan] = useState(null);
 
   const handleFilterClick = (filter) => {
     setCurrentFilter(filter);
@@ -13,10 +14,13 @@ export default function Vans() {
   const handleClearFilters = () => {
     setCurrentFilter('all');
   };
+  // const handleVanClick = (van) => {
+  //   setSelectedVan(van);
+  //  };
 
   const filteredCards = currentFilter === 'all'
   ? Card
-  : Card.filter(item => item.button === currentFilter);
+  : Card.filter((item) => item.button === currentFilter);
 
   return (
     <div className="cards--width">
@@ -50,8 +54,10 @@ export default function Vans() {
        
       </div>
 
-      <Link key={Vans.id}    to ={`/vans/${Vans.id}`}><div className="cards">
+      <div className="cards">
         {filteredCards.map(item => (
+          <div > 
+         <Link  key={item.id} to={`/vans/${item.id}`}>
           <CardsData
             key={item.id}
             img={item.image}
@@ -60,9 +66,18 @@ export default function Vans() {
             button={item.button}
             day={item.day}
             color={item.color}
+           
           />
+          </Link>
+          </div>
         ))}
-      </div> </Link>
+      </div> 
+
+      {/* {selectedVan &&  <VansDetails 
+       type={selectedVan.type}
+       price={selectedVan.price}
+       day={selectedVan.day}
+      />} */}
 
       <div className="footer">
         <p>Ⓒ 2022 #VANLIFE</p>

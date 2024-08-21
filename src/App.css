@@ -23,6 +23,10 @@ body{
   color: #000;
 }
 
+.cards a{
+  color: #000;
+}
+
 .top-buttons{
   align-self: start;
   margin: 40px 0px 20px 42px;
@@ -132,6 +136,8 @@ body{
 
 
 
+
+
 .allcars .button-perday{
   display: flex;
   justify-content: space-between;
@@ -156,6 +162,78 @@ body{
 
 .cardvans--container{
   padding-bottom: 28px;
+}
+
+/* van details page */
+
+.allcars--2{
+  background-color: rgba(255, 247, 237, 1);
+  padding: 20px ;
+}
+
+.allcars--2  h2,
+.allcars--2  p{
+  margin: 20px 0;
+}
+
+.allcars--2 p .bold{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.button2  {
+  width: 85px;
+  height: 33px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
+.button2 a,
+.button3 a{
+  text-decoration: none;
+  font-size: 18px;
+  color:white;
+}
+
+.button3{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  background-color: rgba(255, 140, 56, 1);
+
+  border-radius: 5px;
+}
+
+.description{
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.back{
+  text-decoration: underline;
+  color: rgba(32, 31, 29, 1);
+  font-size: 16px;
+ 
+}
+
+.back span{
+  margin: 0 10px;
+}
+
+.detail-image{
+   width: 100%;
+  /* height: 20vh; */
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 20px 0;
 }
 
 /* Banner.js */
@@ -241,6 +319,7 @@ nav{
 
 .about-page-container{
   background-color: rgba(255, 247, 237, 1);
+  
 }
 
 .about-image {
@@ -249,6 +328,9 @@ nav{
 
 .about-page-content {
   padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .about-page-content h1{
@@ -281,6 +363,15 @@ nav{
   display: flex;
   justify-content: center;
   width: 660px;
+}
+
+.footer2 {
+  background-color:#252525;
+  color: white;
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* host styling  */
@@ -357,7 +448,7 @@ input{
 }
 
 .HostTwo--span {
-  color: #FFCC8D;
+  color: rgba(255, 140, 56, 1);
 }
 
 .foot {
@@ -657,3 +748,17 @@ object-fit: cover;
 }
 /* ******************EndHostmap************* */
 
+/* van details */
+
+
+.details-vans{
+  background-color: #FFF7ED;
+}
+
+/* login */
+.Host-page-container .signup-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
