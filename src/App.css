@@ -611,7 +611,7 @@ font-weight: 900;
 
 .review--score{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
@@ -726,25 +726,27 @@ object-fit: cover;
 }
 .header-dashboard{
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 .scorey{
   font-weight: bolder;
   margin-top: 40px;
 }
 .the-stars{
-  margin-top: -20px;
-  margin-left: -20px;
+  margin-top: 20px;
 }
 .grey{
   color: grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .first-word{
   font-weight: bolder;
   color: black;
 }
-.the-stars2{
-  margin-top: -20px;
-  margin-left: -20px;
+hr{
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 /* ******************EndHostmap************* */
 
