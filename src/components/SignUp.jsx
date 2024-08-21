@@ -33,19 +33,19 @@ const SignUp = (props) => {
     <>
     <h2>Create your account</h2>
   <form onSubmit={handleSubmit}>
-    <input type="email" placeholder='email'
+    <input type="email" placeholder='Email address'
     value={email}
     onChange={(e) => setEmail(e.target.value)}
     />
-    <input type="password" placeholder='password'
+    <input type="password" placeholder='Password'
     value={password}
     onChange={(e) => setPassword(e.target.value)}
     />
     {error && <p>{errorMessage}</p>}
-    <button type="submit">Login</button>
+    <button className='link-HostTwo' type="submit">Sign up</button>
   </form>
   <p>Have an Account?</p>
-  <button onClick={props.toggleForm}>Login</button>
+  <button className='link-HostTwo' onClick={props.toggleForm}>Sign in</button>
   </>
   )
 }

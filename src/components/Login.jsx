@@ -29,24 +29,31 @@ const Login = (props) => {
     }
 
   return (
+    <>
     <div className='Host-page-container'>
     <h2 className='hostTwo--h1'>Sign in to your Account</h2>
   <form onSubmit={handleLogin}>
-    <input type="email" placeholder='email' 
+    <input type="email" placeholder='Email address' 
     value={email} 
     // (e) -> this is an anonymous function so it handles everything that the user types in and the target it gets everthing that the user is typing in
     onChange={(e) => setEmail(e.target.value)}/>
-    <input type="password" placeholder='password'
+    <input type="password" placeholder='Password'
     value={password}
     onChange={(e) => setPassword(e.target.value)}
     />
     {/* // this the error we brought in from firebase  */}
     {error && <p>{errorMessage}</p>} 
-    <button type="submit" className='link-HostTwo'>Login</button>
+    <button type="submit" className='link-HostTwo'>Sign in</button>
   </form>
-  <Link to="/SignUp" className='HostTwo--span'>Have no Account?</Link>
+
+   <span className='signup-btn'>Don’t have an account?<Link to="/SignUp" className='HostTwo--span'>Create one now</Link></span>
+
   <button onClick={props.toggleForm}>Sign Up</button>
   </div>
+  <div className="footer">
+      <p>Ⓒ 2022 #VANLIFE</p>
+    </div>
+  </>
   )
 }
 

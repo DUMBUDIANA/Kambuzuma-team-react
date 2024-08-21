@@ -6,7 +6,7 @@ import About from "../src/pages/About";
 import Vans from "../src/pages/Vans";
 import logo from "../src/Images/logog.png";
 import logIn from "../src/Images/User circle.png";
-// import VansDetails from './pages/VansDetails';
+import VansDetails from './pages/VansDetails';
 import HostVans from '../src/HostPage/Vans';
 import Dashboard from '../src/HostPage/Dashboard';
 import Income from '../src/HostPage/Income';
@@ -42,11 +42,12 @@ function App() {
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VansDetails />} />
         
         <Route path="/authentication" element={<Authentication />} />
         <Route path="/Login" element={<Login />}/>
 
-        {/* <Route path="/VansDetails" element={<VansDetails />} /> */}
+       
 
         <Route element={<PrivateRoutesLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
