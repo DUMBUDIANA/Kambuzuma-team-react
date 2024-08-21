@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {  useState } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
@@ -11,7 +11,7 @@ import HostVans from '../src/HostPage/Vans';
 import Dashboard from '../src/HostPage/Dashboard';
 import Income from '../src/HostPage/Income';
 import Reviews from '../src/HostPage/Reviews';
-import PrivateRoutesLayout from '../src/layouts/PrivateRouteLayout';
+// import PrivateRoutesLayout from '../src/layouts/PrivateRouteLayout';
 // import Layout from './components/Layout.jsx'
 import "./App.css";
 // import Host from '../src/HostPage/Dashboard';
@@ -20,20 +20,22 @@ import Login from './components/Login';
 // import ProtectedLink from './layouts/ProtectedLink';
 
 function App() {
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (  
     <div className='main-section'>
       <header className='Header-main'>
         <Link className="site-logo" to="/"><img src={logo} alt= "logo"className="logo" /></Link>
         <nav>
           
-          <Link to="/Dashboard" className='links'>
-            Host
-          </Link>
+          {isLoggedIn && (
+            <Link to="/" className='links'>Host</Link>
+          )}
+          
         
           <Link to="/About" className='links'>About</Link>
           <Link to="/Vans" className='links'>Vans</Link>
-           <Link to="/Login" className='links'><img src={logIn} alt="login"  className='sign-icon'/></Link>
+          <Link to="/Login" className='links'><img src={logIn} alt="login"  className='sign-icon'/></Link>
         </nav>
       </header>
 
@@ -45,16 +47,16 @@ function App() {
         <Route path="/vans/:id" element={<VansDetails />} />
         
         <Route path="/authentication" element={<Authentication />} />
-        <Route path="/Login" element={<Login />}/>
+        <Route path="/Login" element={<Login setIsLoggedIn={setIsLoggedIn} />}/>
 
        
 
-        <Route element={<PrivateRoutesLayout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route element={<PrivateRoutesLayout />}> */}
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Income" element={<Income />} />
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Hostvans" element={<HostVans />} />
-      </Route>
+      {/* </Route> */}
           {/* </Route> */}
       </Routes>
     </div>
