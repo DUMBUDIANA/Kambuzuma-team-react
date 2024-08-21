@@ -762,3 +762,35 @@ object-fit: cover;
   align-items: center;
   margin: 30px 0;
 }
+
+
+.day {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 597px;
+  margin: 20px 30px;
+
+ 
+}
+
+.vani {
+    max-width: 27%;
+    object-fit: cover;
+    border-radius: 7px;
+    padding-right: 20px;
+}
+
+.vans--more{
+  width: 100%;
+  height: 59vh;
+  overflow-y: auto;
+  padding: 20px
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} 

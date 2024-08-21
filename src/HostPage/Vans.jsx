@@ -1,7 +1,26 @@
+
 import React from 'react'
 import { Link } from "react-router-dom";
+import Card from '../components/Database/Database';
+import Listed from './Listed';
 
 export default function Vans() {
+
+
+  const Maphost = Card.map(item => 
+  
+    <Listed
+ 
+    key={item.id}
+    image={item.image}
+    type={item.type}
+    price={item.price}
+    day={item.day}
+
+   />
+
+);
+
   return (
     <div className="cards--width links-btn">
     <div className="btn-4">
@@ -12,6 +31,9 @@ export default function Vans() {
     </div>
     <h1 className='header-dashboard'>Your listed vans</h1>
     
+    <div className="vans--more">
+      <h1>{Maphost }</h1>
+    </div>
    
   
 
@@ -19,5 +41,5 @@ export default function Vans() {
     <p>Ⓒ 2022 #VANLIFE</p>
   </div>
 </div>
-  )
+)
 }
