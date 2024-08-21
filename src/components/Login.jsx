@@ -1,15 +1,16 @@
-import {useState} from 'react' // to pick data from the input of the user 
+import { useState } from 'react' // to pick data from the input of the user 
 import userLogin from '../auth/userLogin'
 import { useNavigate, useLocation, Link } from "react-router-dom"
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState(null)
+    const [setHost] = useState([]);
 
     const navigate = useNavigate ();
     const location = useLocation ();
 
-    const from = location.state?.from?.pathname || "/host";
+    const from = location.state?.from?.pathname || "/dashboard";
 
     // this the error we brought in from firebase 
     const {error, login} = userLogin();
@@ -18,6 +19,7 @@ const Login = (props) => {
       e.preventDefault(); // this means that it should not refresh this page every time we click the btn to submit 
       await login(email, password);
       if(!error) {
+        fetchHost();
         navigate(from, {replace: true});
         setEmail("");
         setPassword("");
@@ -27,6 +29,16 @@ const Login = (props) => {
         setErrorMessage(error)
       }
     }
+
+  const fetchHost = async () => {
+    try {
+      const response = await fetch('/src/HostPage/Dashboard');
+      const data = await response.json();
+      setHost(data);
+    } catch (err) {
+      console.error("Failed to fetch host:", err)
+    }
+  };
 
   return (
     <div className='Host-page-container'>

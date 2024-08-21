@@ -36,7 +36,7 @@ const Dashboard = () => {
   return (
     <div className="cards--width links-btn">
         <div className="btn-4">
-            <div><a href='/'>  Dashboard </a></div>
+            <div><a href='/dashboard'>  Dashboard </a></div>
             <Link to="/Income" className='links'>Income</Link>
             <Link to="/HostVans" className='links'>Vans</Link>
             <Link to="/Reviews" className='links'>Reviews</Link>
