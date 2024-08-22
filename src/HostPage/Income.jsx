@@ -5,12 +5,14 @@ import Price from '../HostPage/Price';
 import { useState } from 'react';
 export default function Income() {
 
-    const [price, setPrice] = useState ([
+    const [price] = useState ([
         {title: '720', date: '1/12/22', id:1},
         {title: '560', date: '10/12/22', id:2},
         {title: '980', date: '23/12/22', id:2}
 
     ]);
+
+    
 
   return (
     <div className="cards--width links-btn">
