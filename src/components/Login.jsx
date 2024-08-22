@@ -1,6 +1,8 @@
 import { useState } from 'react' // to pick data from the input of the user 
 import userLogin from '../auth/userLogin'
 import { useNavigate, useLocation, Link } from "react-router-dom"
+
+
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -26,7 +28,8 @@ const Login = (props) => {
         return
       } else {
         // this the error we brought in from firebase 
-        setErrorMessage(error)
+        setErrorMessage(error);
+        alert('Create Account')
       }
     }
 
@@ -58,9 +61,9 @@ const Login = (props) => {
     <button type="submit" className='link-HostTwo'>Sign in</button>
   </form>
 
-   <span className='signup-btn'>Don’t have an account?<Link to="/SignUp" className='HostTwo--span'>Create one now</Link></span>
+   <span className='signup-btn'>Don’t have an account?<Link onClick={props.toggleForm}  to="/SignUp" className='HostTwo--span'>Create one now</Link></span>
 
-  <button onClick={props.toggleForm}>Sign Up</button>
+  {/* <button >Sign Up</button> */}
   </div>
   <div className="footer">
       <p>Ⓒ 2022 #VANLIFE</p>
@@ -69,4 +72,4 @@ const Login = (props) => {
   )
 }
 
-export default Login
+export default Login;

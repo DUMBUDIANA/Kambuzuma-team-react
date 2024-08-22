@@ -11,7 +11,7 @@ const SignUp = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || "/host"
+    const from = location.state?.from?.pathname || "/Dashboard"
 
     const {error, signUp} = userSignUp(); 
 
@@ -42,10 +42,10 @@ const SignUp = (props) => {
     onChange={(e) => setPassword(e.target.value)}
     />
     {error && <p>{errorMessage}</p>}
-    <button className='link-HostTwo' type="submit">Sign up</button>
+    <button onClick={props.toggleForm} className='link-HostTwo' type="submit">Sign up</button>
   </form>
-  <p>Have an Account?</p>
-  <button className='link-HostTwo' onClick={props.toggleForm}>Sign in</button>
+  {/* <p>Have an Account?</p>
+  <button  className='link-HostTwo'>Sign in</button> */}
   </>
   )
 }

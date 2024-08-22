@@ -17,10 +17,11 @@ import "./App.css";
 // import Host from '../src/HostPage/Dashboard';
 import Authentication from './pages/Authentication';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 // import ProtectedLink from './layouts/ProtectedLink';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [onVanspage, setonVansPage] = useState(false);
 
   return (  
     <div className='main-section'>
@@ -28,9 +29,9 @@ function App() {
         <Link className="site-logo" to="/"><img src={logo} alt= "logo"className="logo" /></Link>
         <nav>
           
-          {isLoggedIn && (
-            <Link to="/" className='links'>Host</Link>
-          )}
+          {/* {onVanspage && ( */}
+            <Link to="/Login" className='links'>Host</Link>
+          {/* )} */}
           
         
           <Link to="/About" className='links'>About</Link>
@@ -47,8 +48,8 @@ function App() {
         <Route path="/vans/:id" element={<VansDetails />} />
         
         <Route path="/authentication" element={<Authentication />} />
-        <Route path="/Login" element={<Login setIsLoggedIn={setIsLoggedIn} />}/>
-
+        <Route path="/Login" element={<Login  />}/>
+        <Route path="/SignUp" element={<SignUp/>}/>
        
 
         {/* <Route element={<PrivateRoutesLayout />}> */}
