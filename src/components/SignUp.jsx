@@ -46,6 +46,10 @@ const SignUp = (props) => {
   </form>
   {/* <p>Have an Account?</p>
   <button  className='link-HostTwo'>Sign in</button> */}
+
+<div className="footer">
+      <p>Ⓒ 2022 #VANLIFE</p>
+    </div>
   </>
   )
 }
