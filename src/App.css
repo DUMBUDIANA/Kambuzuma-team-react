@@ -574,6 +574,9 @@ input{
 /* ******************Hostmap**************** */
 
 
+form {
+  height: 236px;
+}
 .host--container{
   width: 100%;
 }

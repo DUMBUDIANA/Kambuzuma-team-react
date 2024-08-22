@@ -31,7 +31,9 @@ const SignUp = (props) => {
     }
   return (
     <>
-    <h2>Create your account</h2>
+
+    <div className='Host-page-container'>
+    <h2 className='hostTwo--h1'>Create your account</h2>
   <form onSubmit={handleSubmit}>
     <input type="email" placeholder='Email address'
     value={email}
@@ -47,8 +49,10 @@ const SignUp = (props) => {
   {/* <p>Have an Account?</p>
   <button  className='link-HostTwo'>Sign in</button> */}
 
-<div className="footer">
+  <div className="footer">
       <p>Ⓒ 2022 #VANLIFE</p>
+    </div>
+
     </div>
   </>
   )
