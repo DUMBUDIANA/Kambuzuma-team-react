@@ -1,5 +1,5 @@
 import './App.css';
-import React, {  useState } from 'react';
+import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
