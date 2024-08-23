@@ -33,7 +33,7 @@ const SignUp = (props) => {
     <>
 
     <div className='Host-page-container'>
-    <h2 className='hostTwo--h1'>Create your account</h2>
+    <h2 className='hostTwo--h2'>Create your account</h2>
   <form onSubmit={handleSubmit}>
     <input type="email" placeholder='Email address'
     value={email}
