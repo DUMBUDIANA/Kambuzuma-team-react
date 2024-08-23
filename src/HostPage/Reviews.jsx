@@ -17,7 +17,7 @@ export default function Reviews() {
     <h1 className='header-dashboard'>Your reviews <span className='review-text'>last <span className='text-inside'>30 days</span></span></h1>
     
     <div className='rev'>
-    <img src={pic} alt="rev" />
+    <img src={pic} alt="rev" className='reviews-img' />
 
      <p className='scorey'>Reviews(2)</p>
 
