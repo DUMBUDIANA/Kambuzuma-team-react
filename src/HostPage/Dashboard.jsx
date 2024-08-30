@@ -42,10 +42,13 @@ export default function Dashboard() {
   return (
     <div className="cards--width links-btn">
         <div className="btn-4">
+          
             <div><a href='/Dashboard'>  Dashboard </a></div>
             <Link to="/Income" className='links'>Income</Link>
             <Link to="/HostVans" className='links'>Vans</Link>
+           
             <Link to="/Reviews" className='links'>Reviews</Link>
+            
         </div>
         
         <div className='host--container'>
