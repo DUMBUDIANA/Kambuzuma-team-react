@@ -1,12 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CardsData from '../components/CardsStructure.js';
-import Card from '../components/Database/Database.jsx';
+// import Card from '../components/Database/Database.jsx';
 import {Link} from "react-router-dom";
+import axios from 'axios';
 // import VansDetails from './VansDetails.js';
 
 export default function Vans() {
   const [currentFilter, setCurrentFilter] = useState('all');
+  const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   // const [selectedVan, setSelectedVan] = useState(null);
+
+  useEffect(() => {
+    fetchVans();
+  }, []);
+
+  const fetchVans = async () => {
+    setLoading(true);
+  try {
+    const response = await axios.get('http://localhost:5000/api/Vans');
+    setVans(response.data);
+  } catch (err) {
+    setError('Error fetching vans. Please try again.')
+    console.error('Error fetching vans:', err)
+  } 
+  finally {
+    setLoading(false);
+  }
+  };
+
 
   const handleFilterClick = (filter) => {
     setCurrentFilter(filter);
@@ -19,8 +43,13 @@ export default function Vans() {
   //  };
 
   const filteredCards = currentFilter === 'all'
-  ? Card
-  : Card.filter((item) => item.button === currentFilter);
+  ? vans
+  : vans.filter((item) => item.button === currentFilter);
+
+  if(loading) 
+    return <div>Loading...</div>;
+  if(error)
+    return <div>{error}</div>;
 
   return (
     <div className="cards--width">
