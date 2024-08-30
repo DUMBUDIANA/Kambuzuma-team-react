@@ -1,23 +1,24 @@
-import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import  React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Card from '../components/Database/Database';
 import Host from './Host';
 import staring from "../Images/star.png";
-import userLogOut from "../auth/userLogOut";
+export default function Dashboard() {
+
+  const [Viewall, setShowAll] = useState(false);
+  const toggleShow = () => {
+    setShowAll(prevShowAll => !prevShowAll);
+    };
 
 
-const Dashboard = () => {
-  const navigate = useNavigate()
-  const {error, logOut} = userLogOut()
+  const Maphost = (( Viewall ? Card : Card.slice(0, 3)).map(item => {
 
-  const handleLogOut = async () =>{
-    await logOut();
+   
+  
+  
 
-    if(!error) {
-        navigate("/")
-    }
-  }
-  const Maphost = (Card.map(item => {
+
+
     return(
     <Host 
     key={item.id}
@@ -27,16 +28,21 @@ const Dashboard = () => {
     day={item.day}
 
     />
-      
+
     )
   }))
+
+
+  
+
+
 
 
 
   return (
     <div className="cards--width links-btn">
         <div className="btn-4">
-            <div><a href='/dashboard'>  Dashboard </a></div>
+            <div><a href='/Dashboard'>  Dashboard </a></div>
             <Link to="/Income" className='links'>Income</Link>
             <Link to="/HostVans" className='links'>Vans</Link>
             <Link to="/Reviews" className='links'>Reviews</Link>
@@ -73,9 +79,9 @@ const Dashboard = () => {
 
         <div className="view--more">
         <p className='listedvans--bold'>Your listed Vans</p>
-        <p className='view--all--vans'>View all</p>
+        <p className='view--all--vans'   onClick={toggleShow}>{Viewall ? 'View less' : 'View all'} </p>
         </div>
-        <button onClick={handleLogOut}>Log Out</button>
+
   {Maphost}
     </div>
     
@@ -90,7 +96,5 @@ const Dashboard = () => {
         <p>Ⓒ 2022 #VANLIFE</p>
       </div>
     </div>
-  )
+  );
 }
-
-export default Dashboard

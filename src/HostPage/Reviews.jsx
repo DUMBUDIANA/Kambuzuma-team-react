@@ -7,7 +7,8 @@ export default function Reviews() {
   return (
     <div className="cards--width links-btn">
     <div className="btn-4">
-        <div><a href='/'>  Dashboard </a></div>
+        {/* <div><a href='/'>  Dashboard </a></div> */}
+        <Link to="/Dashboard" className='links'>Dashboard</Link>
         <Link to="/Income" className='links'>Income</Link>
         <Link to="/HostVans" className='links'>Vans</Link>
         <Link to="/Reviews" className='links'>Reviews</Link>
@@ -16,7 +17,7 @@ export default function Reviews() {
     <h1 className='header-dashboard'>Your reviews <span className='review-text'>last <span className='text-inside'>30 days</span></span></h1>
     
     <div className='rev'>
-    <img src={pic} alt="rev" />
+    <img src={pic} alt="rev" className='reviews-img' />
 
      <p className='scorey'>Reviews(2)</p>
 

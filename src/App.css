@@ -5,6 +5,7 @@ body{
 
 
 
+
 .cards--width{
   width: 660px;
   display: flex;
@@ -418,6 +419,12 @@ form input{
   padding: 20px 0;
 }
 
+.hostTwo--h2 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+}
+
 input{
   width: 100%;
   padding: 8px 20px;
@@ -574,6 +581,9 @@ input{
 /* ******************Hostmap**************** */
 
 
+form {
+  height: 236px;
+}
 .host--container{
   width: 100%;
 }
@@ -611,7 +621,7 @@ font-weight: 900;
 
 .review--score{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
@@ -726,25 +736,27 @@ object-fit: cover;
 }
 .header-dashboard{
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 .scorey{
   font-weight: bolder;
   margin-top: 40px;
 }
 .the-stars{
-  margin-top: -20px;
-  margin-left: -20px;
+  margin-top: 20px;
 }
 .grey{
   color: grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .first-word{
   font-weight: bolder;
   color: black;
 }
-.the-stars2{
-  margin-top: -20px;
-  margin-left: -20px;
+hr{
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 /* ******************EndHostmap************* */
 
@@ -794,3 +806,196 @@ footer {
   bottom: 0;
   width: 100%;
 } 
+
+
+/* media query */
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 575px) {
+
+
+  /* homepage  */
+
+ 
+  .home-container {
+    height: 77vh;
+}
+
+    .Header-main {
+        height: 109px;
+        width: 100%;
+        padding: 0px 20px;
+        margin-top: 0px;
+    }
+	
+	    .footer {
+        background-color: #252525;
+        color: white;
+        padding: 25px 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Header-main .logo {
+      width: 115px;
+      height: 25px;
+      object-fit: contain;
+  }
+
+  .Header-main {
+    height: 86px;
+    margin-top: -38px;
+}
+
+.text-spacing {
+  margin-bottom: 28px;
+  font-size: 30px;
+}
+
+/* about page  */
+
+.about-page-content h1 {
+  margin: 13px 12px;
+  font-size: 20px;
+  /* width: 82%; */
+}
+
+.about-page-content {
+  padding: 0 17px;
+  font-size: 6px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+
+.about-page-content h1 {
+  margin: 12px 0;
+  font-size: 22px;
+  /* width: 82%; */
+}
+
+.about-p {
+  font-size: 12px;
+}
+
+
+.about-h {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.about-page-cta {
+  background-color: #FFCC8D;
+  height: 18vh;
+  margin: 16px;
+  padding: 13px 20px;
+  border-radius: 5px;
+}
+
+/* form  */
+
+input {
+  width: 94%;
+  padding: 8px 20px;
+}
+
+form {
+  height: 300px;
+}
+
+
+.hostTwo--h1 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+  margin-top: 67px;
+}
+
+.link-HostTwo {
+  margin: auto;
+  width: 93%;
+  margin-top: 9px;
+}
+
+/* dashbord  */
+
+.cards--width {
+  width: 100%;
+}
+
+.review--score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trans-h4 {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.p-more {
+  font-size: 18px;
+  margin-top: -4px;
+}
+
+/* vans  */
+
+.cards {
+  width: 65%;
+  flex-direction: column;
+}
+
+.top-buttons button {
+  margin: 10px 12px;
+  width: 80px;
+  height: 34px;
+}
+
+.button-container {
+  margin-left: -30px;
+}
+
+.top-buttons h1 {
+  margin-left: -16px;
+}
+
+.top-buttons button.link-filter {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.reviews-img {
+height: 145px;
+}
+
+.rev {
+  padding: 20px;
+}
+
+.hostTwo--h2 {
+  margin-top: 145px;
+}
+}
+
+
+/* Tablets (portrait) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* Styles for tablets */
+}
+
+/* Tablets (landscape) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles for tablets in landscape mode */
+}
+
+/* Desktops and laptops */
+@media only screen and (min-width: 1025px) {
+  /* Styles for desktops and laptops */
+}
+
+/* Large screens */
+@media only screen and (min-width: 1824px) {
+  /* Styles for large screens */
+}

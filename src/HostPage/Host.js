@@ -16,7 +16,7 @@ const Host = (props) => {
                       <p>${props.price}</p>
                       <p>{props.day}</p>
                      </div>
-                    
+                       
                    </div>
   
                 </div>
