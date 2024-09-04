@@ -69,6 +69,11 @@ body{
   margin: 10px 0px 10px 30px;
 } */
 
+
+.nice{
+  height: 0px;
+}
+
 .top-buttons button.simple:hover{
   background-color: rgba(225, 118, 84, 1);
   color: white;
