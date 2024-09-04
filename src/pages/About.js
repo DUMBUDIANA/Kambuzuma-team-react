@@ -7,7 +7,7 @@ export default function About() {
         <div className="about-page-container">
             <img src={bgImg} className="about-image" alt="image-bg" />
             <div className="about-page-content">
-                <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
+                <h1 >Don’t squeeze in a sedan when you could relax in a van.</h1>
                 <p className="about-p">Our mission is to enliven your road trip with the perfect travel van rental. 
                     Our vans are recertified before each trip to ensure your travel plans can go off without a hitch.</p>
                 
