@@ -897,10 +897,17 @@ footer {
 
 
   /* homepage  */
-
+.main-section{
+  margin-bottom: 0px;
+}
  
   .home-container {
-    height: 77vh;
+    width: 100%;
+    height: 75.3vh;
+}
+
+.section-divide3{
+  width: 100%;
 }
 
     .Header-main {
@@ -932,7 +939,18 @@ footer {
 
 .text-spacing {
   margin-bottom: 28px;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.link-banner{
+  width: 100%;
+}
+
+.section-divide3 p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  width: 100%;
 }
 
 /* about page  */
@@ -959,6 +977,11 @@ footer {
 
 .about-p {
   font-size: 12px;
+  
+}
+
+.about-page-content p{
+  width: 100%;
 }
 
 
@@ -983,9 +1006,23 @@ input {
 }
 
 form {
-  height: 300px;
+  height: 150px; 
+  margin-bottom: 143px;
 }
 
+.filma{
+  margin-bottom: 143px;
+}
+
+
+
+.Host-page-container .signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 156px;
+  margin-top: -96px;
+}
 
 .hostTwo--h1 {
   text-align: center;
@@ -995,10 +1032,12 @@ form {
 }
 
 .link-HostTwo {
-  margin: auto;
+ margin: 20px auto;
   width: 93%;
-  margin-top: 9px;
-}
+ 
+ }
+
+
 
 /* dashbord  */
 
@@ -1065,6 +1104,61 @@ height: 145px;
 /* Tablets (portrait) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   /* Styles for tablets */
+
+  .main-section{
+    width: 100%;
+    height: 81vh;
+    margin: 0px;
+    max-width: 100%;
+  }
+
+ /* banner */
+  .Header-main{
+    width: 100%;
+  }
+
+  /* footer */
+
+  .footer{
+    width: 100%;
+  }
+
+  /*host  */
+input {
+  width: 97%;
+  padding: 8px 20px;
+}
+
+form {
+  height: 150px; 
+  margin-bottom: 143px;
+}
+
+.filma{
+  margin-bottom: 143px;
+}
+
+
+.Host-page-container .signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 156px;
+  margin-top: -96px;
+}
+
+.hostTwo--h1 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+  margin-top: 67px;
+}
+
+.link-HostTwo {
+ margin: 20px auto;
+  width: 97%;
+ 
+ }
 }
 
 /* Tablets (landscape) */
