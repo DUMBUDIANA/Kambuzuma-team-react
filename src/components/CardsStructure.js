@@ -25,9 +25,11 @@ const CardsStructure = (props) => {
               <p>${price}</p>
             </div>
             <div className="button-perday">
+              <Link to="../pages/VansDetails" onClick={handleFilterClick}>
               <div style={{ backgroundColor: color }} className="button">
-                <Link to="../pages/VansDetails" onClick={handleFilterClick}>{button}</Link>
+              {button}
               </div>
+              </Link>
               <div className="perday">
                 <p>{day}</p>
               </div>

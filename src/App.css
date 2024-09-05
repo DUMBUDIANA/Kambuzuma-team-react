@@ -121,7 +121,6 @@ body{
 
 
 
-
 .allcars .type-price{
   padding-top: 10px;
   display: flex;
@@ -138,6 +137,10 @@ body{
  font-size: 18px;
  color:white;
 
+}
+
+.button-link {
+  color: white;
 }
 
 
@@ -195,6 +198,7 @@ body{
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+  color:white;
 }
 
 
@@ -213,7 +217,7 @@ body{
   align-items: center;
   margin: 20px 0;
   background-color: rgba(255, 140, 56, 1);
-
+  color:white;
   border-radius: 5px;
 }
 
