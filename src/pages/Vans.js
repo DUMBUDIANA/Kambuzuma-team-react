@@ -3,8 +3,8 @@ import CardsData from '../components/CardsStructure.js';
 // import Card from '../components/Database/Database.jsx';
 import {Link} from "react-router-dom";
 import axios from 'axios';
-import { API_URL } from '../config.js';
-// import VansDetails from './VansDetails.js';
+// import { API_URL } from '../config.js';
+import VansDetails from './VansDetails.js';
 
 export default function Vans() {
   const [currentFilter, setCurrentFilter] = useState('all');
@@ -20,7 +20,7 @@ export default function Vans() {
   const fetchVans = async () => {
     setLoading(true);
   try {
-    const response = await axios.get(`${API_URL}/api/vans`);
+    const response = await axios.get('http://localhost:5000/api/vans');
     setVans(response.data);
   } catch (err) {
     setError('Error fetching vans. Please try again.')
@@ -85,29 +85,21 @@ export default function Vans() {
       </div>
 
       <div className="cards">
-        {filteredCards.map(item => (
-          <div > 
-         <Link  key={item.id} to={`/vans/${item.id}`}>
+        {filteredCards.map((item) => (
+          <div key={item.id}> 
+         <Link to={`/vans/${item.id}`}>
           <CardsData
-            key={item.id}
             img={item.image}
             type={item.type}
             price={item.price}
             button={item.button}
             day={item.day}
             color={item.color}
-           
           />
           </Link>
           </div>
         ))}
-      </div> 
-
-      {/* {selectedVan &&  <VansDetails 
-       type={selectedVan.type}
-       price={selectedVan.price}
-       day={selectedVan.day}
-      />} */}
+      </div>
 
       <div className="footer">
         <p>Ⓒ 2022 #VANLIFE</p>

@@ -1,12 +1,35 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Card from '../components/Database/Database';
+// import Card from '../components/Database/Database';
 import arrow from "../images 2/Arrow 1.png";
+import axios from 'axios';
 
 export default function VansDetails () {
   
   const {id} = useParams();
-  const van = Card.find (item => item.id === parseInt(id));
+  const [van, setVan] =
+  React.useState({});
+  const [loading, setLoading] =
+  React.useState(true);
+
+  React.useEffect(() => {
+    const fetchVan = async () => {
+      try {
+        const response = await
+        axios.get(`http://localhost:5000/vans/${id}`);
+        setVan(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchVan();
+  }, [id]);
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+  // const van = Card.find (item => item.id === parseInt(id));
   return(
     <>
     <div className='allcars--2'>
