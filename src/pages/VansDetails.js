@@ -2,7 +2,7 @@ import React from 'react';
 // import Card from '../components/Database/Database';
 import arrow from "../images 2/Arrow 1.png";
 import useSWR from 'swr';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,7 +11,7 @@ import { Link, useParams } from 'react-router-dom';
   
   const Swr = () => {
     
-    const { vanId } = useParams();
+    // const { vanId } = useParams();
     const { data: van,
        error, isValidating
        } = useSWR(`http://localhost:8002/api/vans/fetch`, fetcher);
