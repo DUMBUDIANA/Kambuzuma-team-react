@@ -31,7 +31,7 @@ function App() {
         <nav>
           
           {/* {onVanspage && ( */}
-            <Link to="/Login" className='links'>Host</Link>
+            <Link to="/Login" className='links'>Host</Link>  
           {/* )} */}
           
         
