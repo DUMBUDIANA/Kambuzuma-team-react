@@ -4,7 +4,7 @@ import CardsData from '../components/CardsStructure.js';
 import {Link} from "react-router-dom";
 import axios from 'axios';
 // import { API_URL } from '../config.js';
-import VansDetails from './VansDetails.js';
+// import VansDetails from './VansDetails.js';
 
 export default function Vans() {
   const [currentFilter, setCurrentFilter] = useState('all');

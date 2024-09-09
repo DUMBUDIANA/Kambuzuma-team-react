@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Banner from "../src/pages/Banner";
 import About from "../src/pages/About";
-import Vans from "../src/pages/Vans";
+// import Vans from "../src/pages/Vans";
 import logo from "../src/Images/logog.png";
 import logIn from "../src/Images/User circle.png";
 import VansDetails from './pages/VansDetails';
@@ -18,6 +18,7 @@ import "./App.css";
 import Authentication from './pages/Authentication';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Users from './pages/Users';
 // import ProtectedLink from './layouts/ProtectedLink';
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
           
         
           <Link to="/About" className='links'>About</Link>
-          <Link to="/Vans" className='links'>Vans</Link>
+          {/* <Link to="/Vans" className='links'>Vans</Link> */}
+          <Link to="/Users" className='links'>Vans</Link>
           <Link to="/Login" className='links'><img src={logIn} alt="login"  className='sign-icon'/></Link>
         </nav>
       </header>
@@ -44,7 +46,8 @@ function App() {
         {/* <Route path="/" element = {<Layout />}> */}
         <Route path="/" element={<Banner />} />
         <Route path="/About" element={<About />}/>
-        <Route path="/Vans" element={<Vans />} />
+        {/* <Route path="/Vans" element={<Vans />} /> */}
+        <Route path="/Users" element={<Users />} />
         <Route path="/vans/:id" element={<VansDetails />} />
         
         <Route path="/authentication" element={<Authentication />} />
