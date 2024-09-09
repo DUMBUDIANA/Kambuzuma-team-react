@@ -6,6 +6,11 @@
  
 }
 
+.name-k {
+  font-size: 23;
+}
+
+
 @font-face {
   font-family: "Inter",sans-serif;
   src: url("../src/Inter.ttc");
