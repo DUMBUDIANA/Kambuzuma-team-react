@@ -16,7 +16,8 @@ const vanSchema = new mongoose.Schema({
     image: String,
     type: String,
     day: String,
-    color: String
+    color: String,
+    button: String
 });
 
 const Van = mongoose.model('Van', vanSchema);
@@ -31,6 +32,19 @@ app.get('/api/vans', async (req, res) => {
     }
 });
 
+// Get item by id
+app.get('/api/vans/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const van = await Van.findById(id);
+        res.json(van);
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+});
+
+
+
 // New API endpont to add a van
 app.post('/api/vans', async (req, res) =>{
     const van = new Van(req.body);
@@ -40,7 +54,7 @@ app.post('/api/vans', async (req, res) =>{
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
-})
+});
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
