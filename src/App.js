@@ -11,7 +11,7 @@ import HostVans from '../src/HostPage/Vans';
 import Dashboard from '../src/HostPage/Dashboard';
 import Income from '../src/HostPage/Income';
 import Reviews from '../src/HostPage/Reviews';
-// import PrivateRoutesLayout from '../src/layouts/PrivateRouteLayout';
+import PrivateRoutesLayout from '../src/layouts/PrivateRouteLayout';
 // import Layout from './components/Layout.jsx'
 import "./App.css";
 // import Host from '../src/HostPage/Dashboard';
@@ -55,12 +55,12 @@ function App() {
         <Route path="/SignUp" element={<SignUp/>}/>
        
 
-        {/* <Route element={<PrivateRoutesLayout />}> */}
+        <Route element={<PrivateRoutesLayout />}>
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Income" element={<Income />} />
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Hostvans" element={<HostVans />} />
-      {/* </Route> */}
+      </Route>
           {/* </Route> */}
       </Routes>
     </div>
