@@ -2,21 +2,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
-// import VansDetails from './VansDetails.js';
+import VansDetails from './VansDetails.js';
+
+
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Swr = () => {
   const [currentFilter, setCurrentFilter] = useState('all');
+  const [selectedVan, setSelectedVan] = useState(null);
   
   const {
     data: vans,
     error,
     isValidating,
-  } = useSWR('http://localhost:8002/api/vans/fetch', fetcher);
+  } = useSWR('http://localhost:5000/vans', fetcher);
 
-
-  
+ 
+  const handleVanClick = (van) => {
+    setSelectedVan(van);
+  };
   
 
   const handleFilterClick = (filter) => {
@@ -70,24 +75,28 @@ const Swr = () => {
         {vans && vans.map((van, index) => (
           shouldDisplayCard(van.button) && (
             <div key={index}>
-              <img src={`http://localhost:8002${van.image}`} alt={van.type} className="images" />
+             <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
               <div className="type-price">
-                <p>{van.type}</p>
+                <p>{van.name}</p>
                 <p>${van.price}</p>
               </div>
               <div className="button-perday">
-                <Link to={`/vans/${van._id}`} state={{ vanId: van._id }} onClick={() => handleFilterClick(van.button)}>
+                <Link to={`/vans/${van._id}`} state={{ vanId: van._id }} onClick={() => handleVanClick(van.button)}>
                   <div style={{ backgroundColor: van.color }} className="button">
-                    {van.button}
+                   {van.button}
+                   
                   </div>
                 </Link>
                 <div className="perday">
-                  <p>{van.day}</p>
+                  <p>/day</p>
                 </div>
               </div>
             </div>
           )
         ))}
+        {selectedVan && (
+          <VansDetails van={selectedVan} />
+        )}
       </div>
     </div>
   );
