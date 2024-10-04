@@ -904,10 +904,9 @@ footer {
   /* homepage  */
 
  
-  .home-container {
-    height: 77vh;
-    /* width: 100%; */
-}
+  /* .home-container {
+    height: auto;
+} */
 
 .section-divide3 {
     display: flex;
@@ -966,6 +965,10 @@ footer {
   font-size: 6px;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.about-p {
+  max-width: 100%;
 }
 
 
