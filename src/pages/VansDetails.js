@@ -9,7 +9,7 @@ const VansDetails = () => {
   const { id } = useParams();
   
 
-  const { data: van, error } = useSWR(`http://localhost:5000/vans/${id}`, fetcher);
+  const { data: van, error } = useSWR(`http://kambuzuma-vanlife-backend-production.up.railway.app/vans/${id}`, fetcher);
 
   if (error) return <div>Failed to load van details</div>;
   if (!van) return <div>Loading...</div>;
@@ -21,7 +21,7 @@ const VansDetails = () => {
       </Link>
 
       <div className="van-details-content">
-        <img src={`http://localhost:5000${van.image}`} alt={van.name} className="images" />
+        <img src={`http://kambuzuma-vanlife-backend-production.up.railway.app${van.image}`} alt={van.name} className="images" />
         <div className="van-info">
           <i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i>
           <h2>{van.name}</h2>
