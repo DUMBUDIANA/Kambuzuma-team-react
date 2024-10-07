@@ -59,12 +59,16 @@ const PaymentForm = () => {
   };
 
   return (
-    <div>
-      <h2>Payment Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Payment ID:</label>
+
+    <div className='payments--container'>
+      <p className='p--payment'>Motorvan rental payment</p>
+      <p className='select--pay'>Select payment method below</p>
+      <form className='submit--payment' onSubmit={handleSubmit}>
+        <div className='payment--id'>
+  
           <input
+          placeholder='Payment id'
+          className='payment--form'
             type="text"
             name="paymentId"
             value={formData.paymentId}
@@ -72,9 +76,11 @@ const PaymentForm = () => {
             required
           />
         </div>
-        <div>
-          <label>Amount:</label>
+        <div className='amount--type'>
+        
           <input
+          placeholder='Amout'
+          className='amount'
             type="number"
             name="amount"
             value={formData.amount}
@@ -83,25 +89,31 @@ const PaymentForm = () => {
             min="0" // Prevent negative numbers
           />
         </div>
-        <div>
-          <label>Payment Method:</label>
-          <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange}>
+
+        <div className='paymentmethod--type'>
+          <p> Payment Getway </p>
+
+          <select className='paymentmethod' name="paymentMethod" value={formData.paymentMethod} onChange={handleChange}>
             <option value="credit card">Credit Card</option>
             <option value="paypal">PayPal</option>
             <option value="bank transfer">Bank Transfer</option>
           </select>
         </div>
-        <div>
-          <label>Currency:</label>
-          <select name="currency" value={formData.currency} onChange={handleChange}>
+
+        <div className='currency--container'>
+        <p> Choose a payment method </p>
+          <select className='currency' name="currency" value={formData.currency} onChange={handleChange}>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
           </select>
         </div>
-        <div>
-          <label>User ID:</label>
+
+        <div className='userid--containe'>
+          
           <input
+          placeholder='your id for example user 847'
+          className='userid'
             type="text"
             name="userId"
             value={formData.userId}
@@ -109,9 +121,12 @@ const PaymentForm = () => {
             required
           />
         </div>
-        <div>
-          <label>Email:</label>
+
+        <div className='email--container'>
+        
           <input
+          placeholder='your email'
+          className='email'
             type="email"
             name="email"
             value={formData.email}
@@ -119,7 +134,8 @@ const PaymentForm = () => {
             required
           />
         </div>
-        <button type="submit">Submit Payment</button>
+
+        <button className='button--submit' type="submit">Submit</button>
       </form>
       {status && <p>{status}</p>}
     </div>
