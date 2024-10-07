@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
     // const { vanId } = useParams();
     const { data: van,
        error, isValidating
-       } = useSWR(`http://localhost:8002/api/vans/fetch`, fetcher);
+       } = useSWR(`http://localhost:5000/vans`, fetcher);
 
 
     
@@ -31,16 +31,16 @@ import { Link } from 'react-router-dom';
        
       <div>
 
-        <Link to="/Vans" className='back'><img src={arrow} alt="arrow" /><span>Back to all vans</span></Link>
+        <Link to="/Users" className='back'><img src={arrow} alt="arrow" /><span>Back to all vans</span></Link>
 
             {van && (
             <>
-              <img src={`http://localhost:8002${van.image}`} alt={van.type} className="images" />
+               <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
               <div className="button2" style={{ backgroundColor: van.color }}>
                 <Link className='detail-btn' to="../pages/VansDetails.js">{van.button}</Link>
               </div>
-              <h2>{van.type}</h2>
-              <p><span className='bold'>${van.price}</span>{van.day}</p>
+              <h2>{van.name}</h2>
+              <p><span className='bold'>${van.price}</span>/day</p>
               <p className='description'>{van.description}</p>
               <div className="button3">
                 <Link to="/Login">Rent this van</Link>

@@ -17,8 +17,8 @@ const Card = [
         price:"80",
         button:"Rugged",
         day:"/day",
-          color:'#115E59',
-           description:"Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper."
+        color:'#115E59',
+        description:"Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper."
     },
 
     {
