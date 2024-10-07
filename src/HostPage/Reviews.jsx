@@ -4,7 +4,7 @@ import pic from '../Images/table.png';
 import StarRating from '../components/starrating';
 
 // Define the base URL for your API
-const API_BASE_URL = 'http://localhost:5000';  // Replace with your actual API base URL
+const API_BASE_URL = 'http://localhost:5000';  
 
 const ReviewComponent = () => {
   const [reviews, setReviews] = useState([]);
