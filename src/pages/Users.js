@@ -39,9 +39,9 @@ const Swr = () => {
   if (isValidating) return <div className="Loading">Loading...</div>;
 
   return (
-    <div className="cardvans--container">
+    <><div className="cardvans--container">
 
-<div className="top-buttons">
+      <div className="top-buttons">
         <h1>Explore our van options</h1>
         <div className="button-container">
           <button
@@ -64,18 +64,18 @@ const Swr = () => {
           </button>
 
           <button onClick={handleClearFilters} className="link-filter">
-          Clear filters
-        </button>
-        
+            Clear filters
+          </button>
+
         </div>
-       
+
       </div>
 
       <div className="allcars">
         {vans && vans.map((van, index) => (
           shouldDisplayCard(van.button) && (
             <div key={index}>
-             <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
+              <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
               <div className="type-price">
                 <p>{van.name}</p>
                 <p>${van.price}</p>
@@ -83,8 +83,8 @@ const Swr = () => {
               <div className="button-perday">
                 <Link to={`/vans/${van._id}`} state={{ vanId: van._id }} onClick={() => handleVanClick(van.button)}>
                   <div style={{ backgroundColor: van.color }} className="button">
-                   {van.button}
-                   
+                    {van.button}
+
                   </div>
                 </Link>
                 <div className="perday">
@@ -98,7 +98,9 @@ const Swr = () => {
           <VansDetails van={selectedVan} />
         )}
       </div>
-    </div>
+    </div><div className="footer">
+        <p>Ⓒ 2022 #VANLIFE</p>
+      </div></>
   );
 };
 

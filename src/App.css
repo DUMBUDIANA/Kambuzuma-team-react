@@ -904,8 +904,20 @@ footer {
   /* homepage  */
 
  
-  .home-container {
-    height: 77vh;
+  /* .home-container {
+    height: auto;
+} */
+
+.section-divide3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.banner1-text {
+  max-width: 100%;
 }
 
     .Header-main {
@@ -953,6 +965,10 @@ footer {
   font-size: 6px;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.about-p {
+  max-width: 100%;
 }
 
 
@@ -1063,6 +1079,10 @@ height: 145px;
 
 .hostTwo--h2 {
   margin-top: 145px;
+}
+
+.link-banner {
+  max-width: 22em;
 }
 }
 input[type="radio"] {
