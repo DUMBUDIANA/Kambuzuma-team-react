@@ -1,61 +1,41 @@
+
 import React from 'react';
-// import Card from '../components/Database/Database';
-import arrow from "../images 2/Arrow 1.png";
+import { useParams, Link } from 'react-router-dom';
 import useSWR from 'swr';
-import { Link } from 'react-router-dom';
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-
-// export default function VansDetails () {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const VansDetails = () => {
+  const { id } = useParams();
   
-  const Swr = () => {
-    
-    // const { vanId } = useParams();
-    const { data: van,
-       error, isValidating
-       } = useSWR(`http://localhost:5000/vans`, fetcher);
 
+  const { data: van, error } = useSWR(`http://localhost:5000/vans/${id}`, fetcher);
 
-    
-    
+  if (error) return <div>Failed to load van details</div>;
+  if (!van) return <div>Loading...</div>;
 
-    if (error) return <div className='failed'>failed to load</div>;
-    if (isValidating) return <div className="Loading">Loading...</div>;
+  return (
+    <><div className="van-details">
+      
+      <Link to='/Users'> <span>Back to vans</span>
+      </Link>
 
-
-  // const van = Card.find (item => item.id === parseInt(id));
-  return(
-    <>
-    <div className='allcars--2'>
-       
-      <div>
-
-        <Link to="/Users" className='back'><img src={arrow} alt="arrow" /><span>Back to all vans</span></Link>
-
-            {van && (
-            <>
-               <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
-              <div className="button2" style={{ backgroundColor: van.color }}>
-                <Link className='detail-btn' to="../pages/VansDetails.js">{van.button}</Link>
-              </div>
-              <h2>{van.name}</h2>
-              <p><span className='bold'>${van.price}</span>/day</p>
-              <p className='description'>{van.description}</p>
-              <div className="button3">
-                <Link to="/Login">Rent this van</Link>
-              </div>
-            </>
-          )}
+      <div className="van-details-content">
+        <img src={`http://localhost:5000${van.image}`} alt={van.name} className="images" />
+        <div className="van-info">
+          <i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i>
+          <h2>{van.name}</h2>
+          <p className='bold'><span>${van.price}</span>/day</p>
+          <p className='description'>{van.description}</p>
+          <button className="link-button">Rent this van</button>
+        </div>
       </div>
-
     </div>
     
     <div className="footer">
-      <p>Ⓒ 2022 #VANLIFE</p>
-    </div>
-  </>
-  )
-}
+        <p>Ⓒ 2022 #VANLIFE</p>
+    </div></>
+  );
+};
 
-export default Swr;
+export default VansDetails;
