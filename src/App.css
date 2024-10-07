@@ -895,6 +895,140 @@ footer {
 } 
 
 
+
+
+
+
+/* PAYMENTS */
+
+.p--payment{
+  font-size: 22px ;
+  font-weight: 600;
+  padding: 10px 0px 2px 0px;
+
+}
+
+.payments--container .select--pay{
+  padding: 0px 0px 10px 0px;
+}
+
+/* .submit--payment{
+  width: 100%;
+} */
+.submit--payment{
+height: 72vh;
+}
+
+.payments--container{
+  padding: 0px 26px;
+  /* background-color: rgba(255, 247, 237, 1); */
+}
+
+.payment--id{
+  width: 100%;
+}
+
+.payment--form{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  /* margin-bottom: 10px; */
+  margin: 0px 0px 20px 0px ;
+  font-size: 14px;
+}
+
+.amount{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  margin: 0px 0px 20px 0px ;
+  font-size: 14px;
+}
+
+
+.paymentmethod--type p{
+font-size: 16px;
+padding: 0px 0px 2px 0px;
+/* font-weight: 600; */
+}
+
+.currency--container p{
+  padding: 0px 0px 2px 0px;
+  font-size: 16px;
+}
+
+.userid{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 0px 0px 20px 0px ;
+}
+.email{
+  border: none;
+  background-color: #E8F0FE;
+  /* outline: none; */
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 0px 0px 20px 0px ;
+}
+
+.button--submit{
+  border: none;
+  width: 92px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(255, 247, 237, 1);
+  transition: .5s;
+  font-weight: 600;
+}
+
+.button--submit:hover{
+  background-color: #FF8C38;
+  color: #fff;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.paymentmethod{
+  background-color: #E8F0FE;
+  border: none;
+  border-radius: 5px;
+  width: 16%;
+  padding: 8px 0px 8px 0px;
+}
+
+.currency{
+  background-color: #E8F0FE;
+  border: none;
+  width: 16%;
+  border-radius: 5px;
+  padding: 8px 0px 8px 0px;
+}
+
+
+.paymentmethod--type{
+  margin-bottom: 12px;
+}
+
+.currency--container{
+  margin-bottom: 12px;
+}
+/* .payments--container{
+  
+} */
+
+
+/* END-PAYMENTS */
+
+
+
 /* media query */
 
 /* Smartphones (portrait) */
