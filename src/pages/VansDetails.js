@@ -22,14 +22,14 @@ const VansDetails = () => {
       
       <Link to='/Users' className='back'> <img src={arrow} alt="arrow" /><span >Back to vans</span> </Link>
 
-      <div className="van-details-content">
-        <img src={`https://kambuzuma-vanlife-backend-production.up.railway.app${van.image}`} alt={van.name} className="images" />
+      <div className="allcars--2">
+        <img src={`https://kambuzuma-vanlife-backend-production.up.railway.app${van.image}`} alt={van.name} className="detail-image" />
         <div className="van-info">
-          <i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i>
+          <span className='button2' style={{ backgroundColor: van.color }}><i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i></span>
           <h2>{van.name}</h2>
           <p ><span className='bold' >${van.price}</span>/day</p>
           <p className='description'>{van.description}</p>
-          <button    onClick={() =>navigate('/paymentt',{replace:true})}   className="link-button" >Rent this van</button>
+          <button    onClick={() =>navigate('/paymentt',{replace:true})}   className="button3" >Rent this van</button>
         </div>
       </div>
     </div>
