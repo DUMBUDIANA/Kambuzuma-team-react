@@ -98,7 +98,7 @@ const Swr = () => {
           <VansDetails van={selectedVan} />
         )}
       </div>
-    </div><div className="footer">
+    </div><div className="footerB">
         <p>Ⓒ 2022 #VANLIFE</p>
       </div></>
   );

@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useSWR from 'swr';
+import arrow from "../images 2/Arrow 1.png"
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -15,24 +16,23 @@ const VansDetails = () => {
   if (!van) return <div>Loading...</div>;
 
   return (
-    <><div className="van-details">
+    <><div className="details-vans">
       
-      <Link to='/Users'> <span>Back to vans</span>
-      </Link>
+      <Link to='/Users' className='back'> <img src={arrow} alt="arrow" /><span >Back to vans</span> </Link>
 
       <div className="van-details-content">
-        <img src={`http://localhost:5000${van.image}`} alt={van.name} className="images" />
-        <div className="van-info">
-          <i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i>
+        <img src={`http://localhost:5000${van.image}`} alt={van.name} className="detail-image" />
+        <div className="allcars--2">
+          <span className='button2'  style={{ backgroundColor: van.color }}><i className={`van-type ${van.button.toLowerCase()}`}>{van.button}</i></span>
           <h2>{van.name}</h2>
-          <p className='bold'><span>${van.price}</span>/day</p>
+          <p ><span className='bold' >${van.price}</span>/day</p>
           <p className='description'>{van.description}</p>
-          <button className="link-button">Rent this van</button>
+          <button className="button3 ">Rent this van</button>
         </div>
       </div>
     </div>
     
-    <div className="footer">
+    <div className="footerB">
         <p>Ⓒ 2022 #VANLIFE</p>
     </div></>
   );

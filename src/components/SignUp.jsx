@@ -1,61 +1,68 @@
-import {useState} from 'react'
-import userSignUp from '../auth/userSignUp'
-import { useNavigate, useLocation } from "react-router-dom"
-
+import { useState } from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
+import ApiService from './ApiService'; // Import the API service
 
 const SignUp = (props) => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [errorMessage, setErrorMessage] = useState(null)
+  const [Name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
-    const navigate = useNavigate();
-    const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const from = location.state?.from?.pathname || "/Dashboard"
+  const from = location.state?.from?.pathname || "/Dashboard";
 
-    const {error, signUp} = userSignUp(); 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        await signUp(email, password);
-
-        if (!error) {
-            navigate(from, { replace: true })
-            setEmail("");
-            setPassword("");
-            return;
-        } else {
-            setErrorMessage(error)
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await ApiService.signup(username, email, password);
+      // Handle successful signup (e.g., store user data in context or local storage)
+      navigate(from, { replace: true });
+    } catch (error) {
+      setErrorMessage(error.message || 'Signup failed');
     }
+  };
+
   return (
     <>
+      <div className='Host-page-container'>
+        <h2 className='hostTwo--h2'>Create your account</h2>
+        <form onSubmit={handleSubmit}>
+        <input 
+            type="text" 
+            placeholder='Name'
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input 
+            type="text" 
+            placeholder='Username'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input 
+            type="email" 
+            placeholder='Email address'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input 
+            type="password" 
+            placeholder='Password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errorMessage && <p>{errorMessage}</p>}
+          <button onClick={props.toggleForm} className='link-HostTwo' type="submit">Sign up</button>
+        </form>
+      </div>
+      <div className="footer">
+        <p>Ⓒ 2022 #VANLIFE</p>
+      </div>
+    </>
+  );
+};
 
-    <div className='Host-page-container'>
-    <h2 className='hostTwo--h2'>Create your account</h2>
-  <form onSubmit={handleSubmit}>
-    <input type="email" placeholder='Email address'
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-    />
-    <input type="password" placeholder='Password'
-    value={password}
-    onChange={(e) => setPassword(e.target.value)}
-    />
-    {error && <p>{errorMessage}</p>}
-    <button onClick={props.toggleForm} className='link-HostTwo' type="submit">Sign up</button>
-  </form>
-  {/* <p>Have an Account?</p>
-  <button  className='link-HostTwo'>Sign in</button> */}
-
-  <div className="footer">
-      <p>Ⓒ 2022 #VANLIFE</p>
-    </div>
-
-    </div>
-  </>
-  )
-}
-
-export default SignUp
+export default SignUp;
