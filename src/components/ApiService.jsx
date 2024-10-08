@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://kambuzuma-vanlife-backend-production.up.railway.app'; // Backend URL
+const API_URL = 'https://kambuzuma-vanlife-backend-production.up.railway.app'; // Backend URL
 
 const ApiService = {
   login: async (email, password) => {
