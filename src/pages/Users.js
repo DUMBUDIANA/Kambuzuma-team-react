@@ -16,7 +16,7 @@ const Swr = () => {
     data: vans,
     error,
     isValidating,
-  } = useSWR('http://localhost:5000/vans', fetcher);
+  } = useSWR('https://kambuzuma-vanlife-backend-production.up.railway.app/vans', fetcher);
 
  
   const handleVanClick = (van) => {
@@ -75,7 +75,7 @@ const Swr = () => {
         {vans && vans.map((van, index) => (
           shouldDisplayCard(van.button) && (
             <div key={index}>
-              <img src={`http://localhost:5000${van.image}`} alt={van.type} className="images" />
+              <img src={`https://kambuzuma-vanlife-backend-production.up.railway.app${van.image}`} alt={van.type} className="images" />
               <div className="type-price">
                 <p>{van.name}</p>
                 <p>${van.price}</p>

@@ -915,6 +915,140 @@ footer {
 } 
 
 
+
+
+
+
+/* PAYMENTS */
+
+.p--payment{
+  font-size: 22px ;
+  font-weight: 600;
+  padding: 10px 0px 2px 0px;
+
+}
+
+.payments--container .select--pay{
+  padding: 0px 0px 10px 0px;
+}
+
+/* .submit--payment{
+  width: 100%;
+} */
+.submit--payment{
+height: 72vh;
+}
+
+.payments--container{
+  padding: 0px 26px;
+  /* background-color: rgba(255, 247, 237, 1); */
+}
+
+.payment--id{
+  width: 100%;
+}
+
+.payment--form{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  /* margin-bottom: 10px; */
+  margin: 0px 0px 20px 0px ;
+  font-size: 14px;
+}
+
+.amount{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  margin: 0px 0px 20px 0px ;
+  font-size: 14px;
+}
+
+
+.paymentmethod--type p{
+font-size: 16px;
+padding: 0px 0px 2px 0px;
+/* font-weight: 600; */
+}
+
+.currency--container p{
+  padding: 0px 0px 2px 0px;
+  font-size: 16px;
+}
+
+.userid{
+  background-color: #E8F0FE;
+  border: none;
+  /* outline: none; */
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 0px 0px 20px 0px ;
+}
+.email{
+  border: none;
+  background-color: #E8F0FE;
+  /* outline: none; */
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 0px 0px 20px 0px ;
+}
+
+.button--submit{
+  border: none;
+  width: 92px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(255, 247, 237, 1);
+  transition: .5s;
+  font-weight: 600;
+}
+
+.button--submit:hover{
+  background-color: #FF8C38;
+  color: #fff;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.paymentmethod{
+  background-color: #E8F0FE;
+  border: none;
+  border-radius: 5px;
+  width: 16%;
+  padding: 8px 0px 8px 0px;
+}
+
+.currency{
+  background-color: #E8F0FE;
+  border: none;
+  width: 16%;
+  border-radius: 5px;
+  padding: 8px 0px 8px 0px;
+}
+
+
+.paymentmethod--type{
+  margin-bottom: 12px;
+}
+
+.currency--container{
+  margin-bottom: 12px;
+}
+/* .payments--container{
+  
+} */
+
+
+/* END-PAYMENTS */
+
+
+
 /* media query */
 
 /* Smartphones (portrait) */
@@ -1139,7 +1273,12 @@ height: 145px;
   max-width: 22em;
 }
 }
-
+input[type="radio"] {
+  display: none;
+}
+.galaxy{
+  cursor: pointer;
+}
 
 /* Tablets (portrait) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -1214,4 +1353,77 @@ form {
 /* Large screens */
 @media only screen and (min-width: 1824px) {
   /* Styles for large screens */
+}
+
+.orange-btn {
+  background-color: #FF7F00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  /* transition: background-color 0.3s ease-in-out; */
+  font-family: "Inter";
+}
+
+    .review-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid black;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-left: 0px;
+     
+    }
+
+
+
+/* Style for the main review container */
+.rev {
+  position: relative;
+  padding-bottom: 60px; /* Add space at the bottom for the footer */
+}
+
+/* Style for the review form to keep it fixed at the top */
+.fixed-form {
+  margin-top: 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px 15px 15px 15px;
+    z-index: 1;
+    padding: 6px 15px 6px 14px;
+}
+
+/* Style for the scrollable reviews container */
+.reviews-container {
+  max-height: 400px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+/* Customize the scrollbar width */
+.reviews-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Style the scrollbar track */
+.reviews-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Style the scrollbar handle */
+.reviews-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Style the scrollbar handle on hover */
+.reviews-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

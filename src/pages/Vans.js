@@ -20,7 +20,7 @@ export default function Vans() {
   const fetchVans = async () => {
     setLoading(true);
   try {
-    const response = await axios.get('http://localhost:5000/vans');
+    const response = await axios.get('http://kambuzuma-vanlife-backend-production.up.railway.app/vans');
     setVans(response.data);
   } catch (err) {
     setError('Error fetching vans. Please try again.')

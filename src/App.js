@@ -19,6 +19,8 @@ import Authentication from './pages/Authentication';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Users from './pages/Users';
+// import PaymentList from './pages/PaymentList';
+import PaymentForm from './pages/PaymentForm';
 // import ProtectedLink from './layouts/ProtectedLink';
 
 function App() {
@@ -49,7 +51,9 @@ function App() {
         {/* <Route path="/Vans" element={<Vans />} /> */}
         <Route path="/Users" element={<Users />} />
         <Route path="/vans/:id" element={<VansDetails />} />
-        
+        {/* <Route path="/payments" element={<PaymentList/>} /> */}
+
+        <Route path="/paymentt" element={<PaymentForm/>} />
         <Route path="/authentication" element={<Authentication />} />
         <Route path="/Login" element={<Login  />}/>
         <Route path="/SignUp" element={<SignUp/>}/>
