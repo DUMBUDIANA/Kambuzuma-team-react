@@ -101,7 +101,7 @@ export default function Vans() {
         ))}
       </div>
 
-      <div className="footer">
+      <div className="footerB">
         <p>Ⓒ 2022 #VANLIFE</p>
       </div>
     </div>

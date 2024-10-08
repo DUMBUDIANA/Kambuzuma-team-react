@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         
         </div>
-        <div className="footer">
+        <div className="footerB">
         <p>Ⓒ 2022 #VANLIFE</p>
         </div> 
       

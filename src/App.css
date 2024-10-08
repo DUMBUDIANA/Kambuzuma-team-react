@@ -177,6 +177,11 @@ body{
 
 /* van details page */
 
+.details-vans{
+  background-color: #FFF7ED;
+  padding: 20px;
+}
+
 .allcars--2{
   background-color: rgba(255, 247, 237, 1);
   padding: 20px ;
@@ -221,10 +226,12 @@ body{
   background-color: rgba(255, 140, 56, 1);
   color:white;
   border-radius: 5px;
+  border: rgba(255, 140, 56, 1) ;
+  font-style: normal;
 }
 
 .description{
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.6;
   font-size: 16px;
 }
@@ -242,10 +249,11 @@ body{
 
 .detail-image{
    width: 100%;
-  /* height: 20vh; */
+  height: 90vh;
   object-fit: cover;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 20px 0px ;
+  
 }
 
 .hooo {
@@ -353,13 +361,13 @@ body{
 
 
 
- a:hover{
+nav a:hover{
   border-bottom: 2px solid black;
  
   font-weight: 600;
 }
 
- a.active{
+nav a.active{
   border-bottom: 2px solid black;
   
   font-weight: 600;
@@ -440,6 +448,18 @@ nav{
   justify-content: center;
   width: 660px;
   height: 75px;
+  margin-top: 50px;
+}
+
+.footerB{
+  background-color:rgba(37, 37, 37, 1);
+  color: rgba(170, 170, 170, 1);
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+  width: 660px;
+  height: 75px;
+ 
 }
 
 .footer2 {
@@ -459,10 +479,11 @@ nav{
   padding: 25px 20px;
   display: flex;
   justify-content: center;
+  
 }
 
 form input{
-  margin:10px;
+  margin:10px 0px;
   border-radius: 5px;
 }
 
@@ -504,6 +525,7 @@ form input{
 input{
   width: 100%;
   padding: 8px 20px;
+ 
 }
 
 .link-HostTwo{
@@ -515,7 +537,7 @@ input{
   text-decoration: none;
   color: white;
   font-weight: 600;
-  margin-top: 35px;
+  margin-top: 15px;
   padding: 10px 0px;
   border-radius: 2px;
   outline: none;
@@ -847,12 +869,10 @@ hr{
 
 
 
-/* van details */
 
 
-.details-vans{
-  background-color: #FFF7ED;
-}
+
+
 
 /* login */
 .Host-page-container .signup-btn{
@@ -1036,7 +1056,9 @@ padding: 0px 0px 2px 0px;
 
 
   /* homepage  */
-
+.main-section{
+  margin-bottom: 0px;
+}
  
   /* .home-container {
     height: auto;
@@ -1083,7 +1105,18 @@ padding: 0px 0px 2px 0px;
 
 .text-spacing {
   margin-bottom: 28px;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.link-banner{
+  width: 100%;
+}
+
+.section-divide3 p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  width: 100%;
 }
 
 /* about page  */
@@ -1114,6 +1147,11 @@ padding: 0px 0px 2px 0px;
 
 .about-p {
   font-size: 12px;
+  
+}
+
+.about-page-content p{
+  width: 100%;
 }
 
 
@@ -1138,9 +1176,23 @@ input {
 }
 
 form {
-  height: 300px;
+  height: 150px; 
+  margin-bottom: 143px;
 }
 
+.filma{
+  margin-bottom: 143px;
+}
+
+
+
+.Host-page-container .signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 156px;
+  margin-top: -96px;
+}
 
 .hostTwo--h1 {
   text-align: center;
@@ -1150,10 +1202,12 @@ form {
 }
 
 .link-HostTwo {
-  margin: auto;
+ margin: 20px auto;
   width: 93%;
-  margin-top: 9px;
-}
+ 
+ }
+
+
 
 /* dashbord  */
 
@@ -1229,6 +1283,61 @@ input[type="radio"] {
 /* Tablets (portrait) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   /* Styles for tablets */
+
+  .main-section{
+    width: 100%;
+    height: 81vh;
+    margin: 0px;
+    max-width: 100%;
+  }
+
+ /* banner */
+  .Header-main{
+    width: 100%;
+  }
+
+  /* footer */
+
+  .footer{
+    width: 100%;
+  }
+
+  /*host  */
+input {
+  width: 97%;
+  padding: 8px 20px;
+}
+
+form {
+  height: 150px; 
+  margin-bottom: 143px;
+}
+
+.filma{
+  margin-bottom: 143px;
+}
+
+
+.Host-page-container .signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 156px;
+  margin-top: -96px;
+}
+
+.hostTwo--h1 {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0;
+  margin-top: 67px;
+}
+
+.link-HostTwo {
+ margin: 20px auto;
+  width: 97%;
+ 
+ }
 }
 
 /* Tablets (landscape) */
