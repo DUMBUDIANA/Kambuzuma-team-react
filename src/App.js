@@ -21,6 +21,7 @@ import SignUp from './components/SignUp';
 import Users from './pages/Users';
 // import PaymentList from './pages/PaymentList';
 import PaymentForm from './pages/PaymentForm';
+import Formupload from './pages/Formupload';
 // import ProtectedLink from './layouts/ProtectedLink';
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <Route path="/authentication" element={<Authentication />} />
         <Route path="/Login" element={<Login  />}/>
         <Route path="/SignUp" element={<SignUp/>}/>
+        <Route path="/Formuploads" element={<Formupload/>} />
        
 
         <Route element={<PrivateRoutesLayout />}>
