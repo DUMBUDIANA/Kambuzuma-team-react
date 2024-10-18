@@ -80,7 +80,7 @@ const Swr = () => {
                 <p>{van.name}</p>
                 <p>${van.price}</p>
               </div>
-              <div className="button-perday">
+              <div className="button- perday">
                 <Link to={`/vans/${van._id}`} state={{ vanId: van._id }} onClick={() => handleVanClick(van.button)}>
                   <div style={{ backgroundColor: van.color }} className="button">
                     {van.button}

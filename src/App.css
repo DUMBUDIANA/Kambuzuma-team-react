@@ -1272,6 +1272,20 @@ height: 145px;
 .link-banner {
   max-width: 22em;
 }
+
+.footer, .footerB {
+  width: 100%;
+}
+
+.allcars {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.allcars {
+  padding: 38px;
+}
 }
 input[type="radio"] {
   display: none;
@@ -1338,6 +1352,8 @@ form {
   width: 97%;
  
  }
+
+
 }
 
 /* Tablets (landscape) */
