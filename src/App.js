@@ -60,7 +60,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp/>}/>
         <Route path="/Formuploads" element={<Formupload/>} />
        
-
+ 
         <Route element={<PrivateRoutesLayout />}>
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Income" element={<Income />} />
