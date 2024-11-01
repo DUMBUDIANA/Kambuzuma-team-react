@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
-import VansDetails from './VansDetails.js';
 
 // Fetcher function for SWR
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-// Base API URL set from environment variables for flexibility
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
-
 const Swr = () => {
   const [currentFilter, setCurrentFilter] = useState('all');
-  const [selectedVan, setSelectedVan] = useState(null);
 
-  // SWR hook to fetch vans data
-  const { data: vans, error, isValidating } = useSWR(`${apiBaseUrl}/vans`, fetcher);
+  // API URLs
+  const apiBaseUrlProduction = 'https://kambuzuma-vanlife-backend-production.up.railway.app';
+  const apiBaseUrlLocal = 'http://localhost:5000';
 
-  const handleVanClick = (van) => {
-    setSelectedVan(van);
-  };
+  // Use the appropriate API based on the environment
+  const apiUrl = window.location.hostname === 'localhost' ? apiBaseUrlLocal : apiBaseUrlProduction;
+  const { data: vans, error, isValidating } = useSWR(`${apiUrl}/vans`, fetcher);
 
   const handleFilterClick = (filter) => {
     setCurrentFilter(filter);
@@ -70,7 +66,7 @@ const Swr = () => {
             shouldDisplayCard(van.button) && (
               <div key={index}>
                 <img
-                  src={`${apiBaseUrl}${van.image}`}
+                  src={`${apiUrl}${van.image}`} // Use the current API URL
                   alt={van.type}
                   className="images"
                 />
@@ -79,11 +75,7 @@ const Swr = () => {
                   <p>${van.price}</p>
                 </div>
                 <div className="button-perday">
-                  <Link
-                    to={`/vans/${van._id}`}
-                    state={{ vanId: van._id }}
-                    onClick={() => handleVanClick(van.button)}
-                  >
+                  <Link to={`/vans/${van._id}`} state={{ vanId: van._id }}>
                     <div style={{ backgroundColor: van.color }} className="button">
                       {van.button}
                     </div>
@@ -95,9 +87,6 @@ const Swr = () => {
               </div>
             )
           ))}
-          {selectedVan && (
-            <VansDetails van={selectedVan} />
-          )}
         </div>
       </div>
       <div className="footerB">

@@ -23,6 +23,7 @@ import Users from './pages/Users';
 import PaymentForm from './pages/PaymentForm';
 import Formupload from './pages/Formupload';
 // import ProtectedLink from './layouts/ProtectedLink';
+import UploadVanForm from './pages/upload';
 
 function App() {
   // const [onVanspage, setonVansPage] = useState(false);
@@ -39,7 +40,7 @@ function App() {
           
         
           <Link to="/About" className='links'>About</Link>
-          {/* <Link to="/Vans" className='links'>Vans</Link> */}
+          <Link to="/UploadVanForm" className='links'>Upload</Link>
           <Link to="/Users" className='links'>Vans</Link>
           <Link to="/Login" className='links'><img src={logIn} alt="login"  className='sign-icon'/></Link>
         </nav>
@@ -52,7 +53,7 @@ function App() {
         {/* <Route path="/Vans" element={<Vans />} /> */}
         <Route path="/Users" element={<Users />} />
         <Route path="/vans/:id" element={<VansDetails />} />
-        {/* <Route path="/payments" element={<PaymentList/>} /> */}
+        <Route path="/UploadVanForm" element={<UploadVanForm/>} />
 
         <Route path="/paymentt" element={<PaymentForm/>} />
         <Route path="/authentication" element={<Authentication />} />
