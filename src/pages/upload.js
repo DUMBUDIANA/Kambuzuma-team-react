@@ -25,6 +25,7 @@ const UploadVanForm = () => {
       const allowedTypes = ['image/jpeg', 'image/png'];
       if (allowedTypes.includes(selectedImage.type)) {
         setImage(selectedImage);
+        console.log('Selected image:', selectedImage.name, 'Size:', selectedImage.size, 'Type:', selectedImage.type);
       } else {
         setMessage('Please select a valid image file (JPEG or PNG).');
       }
@@ -37,14 +38,21 @@ const UploadVanForm = () => {
     setMessage('');
 
     const submitData = new FormData();
-    Object.entries(formData).forEach(([key, value]) => submitData.append(key, value));
-    if (image) submitData.append('image', image);
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value) {  // Only append if value exists
+        submitData.append(key, value);
+      }
+    });
+    
+    if (image) {
+      submitData.append('image', image);
+    }
 
     // Log the form data being sent
     console.log('Sending data to:', `${apiBaseUrl}/vans`);
     console.log('Form data entries:');
     for (let pair of submitData.entries()) {
-      console.log(pair[0], pair[1]);
+      console.log(pair[0], ':', typeof pair[1], ':', pair[1]);
     }
 
     try {
@@ -52,33 +60,48 @@ const UploadVanForm = () => {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
-        headers: {
-          'Accept': 'application/json',
-        },
         body: submitData,
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || `Server responded with status: ${response.status}`);
+      // Log the full response for debugging
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
+      let responseData;
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        responseData = await response.json();
+        console.log('Response data:', responseData);
+      } else {
+        const textResponse = await response.text();
+        console.log('Raw response:', textResponse);
+        try {
+          responseData = JSON.parse(textResponse);
+        } catch (e) {
+          responseData = { message: textResponse };
+        }
       }
 
-      const responseData = await response.json();
-      console.log('Success response:', responseData);
+      if (!response.ok) {
+        throw new Error(responseData.message || `Server error: ${response.status}`);
+      }
+
       setMessage('Van uploaded successfully!');
       setFormData({ name: '', description: '', price: '', type: '', color: '' });
       setImage(null);
     } catch (error) {
-      console.error('Detailed error:', error);
-      setMessage(error.message || 'Upload failed. Please check console for details.');
+      console.error('Upload error details:', error);
       
-      // Additional error information
-      if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
-        setMessage('Cannot connect to server. Please check:\n' +
-          '1. If the server URL is correct\n' +
-          '2. If the server is running\n' +
-          '3. If there are any network connectivity issues');
+      let errorMessage = 'Upload failed: ';
+      if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
+        errorMessage += 'Connection failed. Please check your internet connection.';
+      } else if (error.message.includes('500')) {
+        errorMessage += 'Server error. Please try again later or contact support.';
+      } else {
+        errorMessage += error.message;
       }
+      
+      setMessage(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -88,7 +111,7 @@ const UploadVanForm = () => {
     <div className="max-w-2xl mx-auto p-4">
       {message && (
         <div className={`mb-4 p-2 rounded whitespace-pre-line ${
-          message.includes('failed') || message.includes('Cannot connect') 
+          message.includes('failed') || message.includes('error') 
             ? 'text-red-500 bg-red-100' 
             : 'text-green-500 bg-green-100'
         }`}>
@@ -127,7 +150,7 @@ const UploadVanForm = () => {
           <label className="mb-1">Image:</label>
           <input
             type="file"
-            accept="image/*"
+            accept="image/jpeg,image/png"
             onChange={handleImageChange}
             className="border p-2 rounded"
             required
