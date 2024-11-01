@@ -5,7 +5,8 @@ const UploadVanForm = () => {
     name: '',
     description: '',
     price: '',
-    type: { button: '', color: '' }, // Nested object for type
+    type: 'rugged', // Default to 'rugged'
+    color: 'red',   // Default to red
   });
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -15,20 +16,10 @@ const UploadVanForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    
-    // Check if the input name is for the type object
-    if (name.startsWith('type.')) {
-      const key = name.split('.')[1]; // Get the key (button or color)
-      setFormData(prev => ({
-        ...prev,
-        type: { ...prev.type, [key]: value }, // Update the type object
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [name]: name === 'price' ? parseFloat(value) : value,
-      }));
-    }
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleImageChange = (e) => {
@@ -51,27 +42,11 @@ const UploadVanForm = () => {
 
     const submitData = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
-      if (key === 'type') {
-        // Append the type object properties separately
-        Object.entries(value).forEach(([typeKey, typeValue]) => {
-          submitData.append(`type.${typeKey}`, typeValue);
-        });
-      } else {
-        if (value) {
-          submitData.append(key, value);
-        }
-      }
+      submitData.append(key, value);
     });
     
     if (image) {
       submitData.append('image', image);
-    }
-
-    // Log the form data being sent
-    console.log('Sending data to:', `${apiBaseUrl}/vans`);
-    console.log('Form data entries:');
-    for (let pair of submitData.entries()) {
-      console.log(pair[0], ':', typeof pair[1], ':', pair[1]);
     }
 
     try {
@@ -82,18 +57,12 @@ const UploadVanForm = () => {
         body: submitData,
       });
 
-      // Log the full response for debugging
-      console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
-
       let responseData;
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
         responseData = await response.json();
-        console.log('Response data:', responseData);
       } else {
         const textResponse = await response.text();
-        console.log('Raw response:', textResponse);
         try {
           responseData = JSON.parse(textResponse);
         } catch (e) {
@@ -106,21 +75,11 @@ const UploadVanForm = () => {
       }
 
       setMessage('Van uploaded successfully!');
-      setFormData({ name: '', description: '', price: '', type: { button: '', color: '' } }); // Reset to initial state
+      setFormData({ name: '', description: '', price: '', type: 'rugged', color: 'red' }); // Reset to initial state
       setImage(null);
     } catch (error) {
       console.error('Upload error details:', error);
-      
-      let errorMessage = 'Upload failed: ';
-      if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
-        errorMessage += 'Connection failed. Please check your internet connection.';
-      } else if (error.message.includes('500')) {
-        errorMessage += 'Server error. Please try again later or contact support.';
-      } else {
-        errorMessage += error.message;
-      }
-      
-      setMessage(errorMessage);
+      setMessage('Upload failed: ' + error.message);
     } finally {
       setLoading(false);
     }
@@ -139,38 +98,12 @@ const UploadVanForm = () => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {['name', 'description', 'price'].map((field) => (
-          <div key={field} className="flex flex-col">
-            <label className="mb-1">{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
-            {field === 'description' ? (
-              <textarea
-                name={field}
-                value={formData[field]}
-                onChange={handleInputChange}
-                className="border p-2 rounded"
-                required
-              />
-            ) : (
-              <input
-                type={field === 'price' ? 'number' : 'text'}
-                name={field}
-                value={formData[field]}
-                onChange={handleInputChange}
-                className="border p-2 rounded"
-                required
-                min={field === 'price' ? '0' : undefined}
-                step={field === 'price' ? '0.01' : undefined}
-              />
-            )}
-          </div>
-        ))}
-
         <div className="flex flex-col">
-          <label className="mb-1">Type Button:</label>
+          <label className="mb-1">Name:</label>
           <input
             type="text"
-            name="type.button"
-            value={formData.type.button}
+            name="name"
+            value={formData.name}
             onChange={handleInputChange}
             className="border p-2 rounded"
             required
@@ -178,15 +111,76 @@ const UploadVanForm = () => {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1">Color:</label>
-          <input
-            type="text"
-            name="type.color"
-            value={formData.type.color}
+          <label className="mb-1">Description:</label>
+          <textarea
+            name="description"
+            value={formData.description}
             onChange={handleInputChange}
             className="border p-2 rounded"
             required
           />
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1">Price:</label>
+          <input
+            type="number"
+            name="price"
+            value={formData.price}
+            onChange={handleInputChange}
+            className="border p-2 rounded"
+            required
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1">Type:</label>
+          <select
+            name="type"
+            value={formData.type}
+            onChange={handleInputChange}
+            className="border p-2 rounded"
+            required
+          >
+            <option value="rugged">Rugged</option>
+            <option value="luxury">Luxury</option>
+            <option value="simple">Simple</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1">Color:</label>
+          <select
+            name="color"
+            value={formData.color}
+            onChange={handleInputChange}
+            className="border p-2 rounded"
+            required
+          >
+            {formData.type === 'rugged' && (
+              <>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+              </>
+            )}
+            {formData.type === 'luxury' && (
+              <>
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
+                <option value="black">Black</option>
+              </>
+            )}
+            {formData.type === 'simple' && (
+              <>
+                <option value="white">White</option>
+                <option value="grey">Grey</option>
+                <option value="beige">Beige</option>
+              </>
+            )}
+          </select>
         </div>
 
         <div className="flex flex-col">
