@@ -12,7 +12,6 @@ const UploadVanForm = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Make sure this URL is correct and the server is running
   const apiBaseUrl = 'https://kambuzuma-vanlife-backend-production.up.railway.app';
 
   const handleInputChange = (e) => {
@@ -49,16 +48,6 @@ const UploadVanForm = () => {
     }
 
     try {
-      // First, try a test request to check if the server is reachable
-      const testResponse = await fetch(apiBaseUrl, {
-        method: 'GET',
-        mode: 'cors',
-      }).catch(error => {
-        console.log('Test request failed:', error);
-        throw new Error('Cannot connect to server. Please check if the server is running.');
-      });
-
-      // If test request succeeds, proceed with the actual upload
       const response = await fetch(`${apiBaseUrl}/vans`, {
         method: 'POST',
         mode: 'cors',
