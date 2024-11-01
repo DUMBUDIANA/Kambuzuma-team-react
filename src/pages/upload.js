@@ -5,8 +5,7 @@ const UploadVanForm = () => {
     name: '',
     description: '',
     price: '',
-    type: '',
-    color: '',
+    type: { button: '', color: '' }, // Nested object for type
   });
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -16,7 +15,20 @@ const UploadVanForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: name === 'price' ? parseFloat(value) : value }));
+    
+    // Check if the input name is for the type object
+    if (name.startsWith('type.')) {
+      const key = name.split('.')[1]; // Get the key (button or color)
+      setFormData(prev => ({
+        ...prev,
+        type: { ...prev.type, [key]: value }, // Update the type object
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: name === 'price' ? parseFloat(value) : value,
+      }));
+    }
   };
 
   const handleImageChange = (e) => {
@@ -39,8 +51,15 @@ const UploadVanForm = () => {
 
     const submitData = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
-      if (value) {  // Only append if value exists
-        submitData.append(key, value);
+      if (key === 'type') {
+        // Append the type object properties separately
+        Object.entries(value).forEach(([typeKey, typeValue]) => {
+          submitData.append(`type.${typeKey}`, typeValue);
+        });
+      } else {
+        if (value) {
+          submitData.append(key, value);
+        }
       }
     });
     
@@ -87,7 +106,7 @@ const UploadVanForm = () => {
       }
 
       setMessage('Van uploaded successfully!');
-      setFormData({ name: '', description: '', price: '', type: '', color: '' });
+      setFormData({ name: '', description: '', price: '', type: { button: '', color: '' } }); // Reset to initial state
       setImage(null);
     } catch (error) {
       console.error('Upload error details:', error);
@@ -120,7 +139,7 @@ const UploadVanForm = () => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {['name', 'description', 'price', 'type', 'color'].map((field) => (
+        {['name', 'description', 'price'].map((field) => (
           <div key={field} className="flex flex-col">
             <label className="mb-1">{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
             {field === 'description' ? (
@@ -145,6 +164,30 @@ const UploadVanForm = () => {
             )}
           </div>
         ))}
+
+        <div className="flex flex-col">
+          <label className="mb-1">Type Button:</label>
+          <input
+            type="text"
+            name="type.button"
+            value={formData.type.button}
+            onChange={handleInputChange}
+            className="border p-2 rounded"
+            required
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1">Color:</label>
+          <input
+            type="text"
+            name="type.color"
+            value={formData.type.color}
+            onChange={handleInputChange}
+            className="border p-2 rounded"
+            required
+          />
+        </div>
 
         <div className="flex flex-col">
           <label className="mb-1">Image:</label>
